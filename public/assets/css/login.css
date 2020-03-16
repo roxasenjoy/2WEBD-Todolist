@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+
+/* Titre */
+h1{
+    color:#1D3557;
+    font-family: "Rockwell Nova", "Comic Sans MS", sans-serif;
+}
+
+/* Formulaire de connexion */
+#login{
+    font-size: 25px;
+    font-family: "Rockwell Nova";
+
+}
+
+/* Formulaire de connexion */
+label, input{
+    color: #1D3557;
+    font-size: 20px;
+    font-family: "Rockwell Nova Light";
+}
+
+input{
+    border:none;
+    border-bottom: solid #1D3557 2px;
+}
+
+button{
+    color: #1D3557;
+    padding: 5px 40px;
+    background-color:white;
+    border: #1D3557 solid 2px;
+    border-radius: 50px;
+}
+
+/* Triangle rectangle*/
+.separator{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 155px 0 0 434px;
+    border-color: transparent transparent transparent #1D3557;
+    line-height: 0px;
+    _border-color: #000000 #000000 #000000 #1D3557;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+
+/* Footer */
+#create_account{
+    font-size: 15px;
+    color: #F1FAEE;
+    font-family: "Rockwell Nova";
+    background-color:#1D3557;
+    text-decoration: none;
+}
+

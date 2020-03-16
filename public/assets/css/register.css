@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    color:#F1FAEE;
+}
+
+body{
+    background-color:#E63946;
+}
+
+/* Titre */
+h1{
+    font-family: "Rockwell Nova", "Comic Sans MS", sans-serif;
+}
+
+/* Formulaire de connexion */
+#login{
+    font-size: 25px;
+    font-family: "Rockwell Nova";
+
+}
+/* Formulaire de connexion */
+label, input{
+    font-size: 20px;
+    font-family: "Rockwell Nova Light";
+}
+
+input{
+    border:none;
+    border-bottom: solid #F1FAEE 2px;
+    background-color:#E63946;
+}
+
+button{
+    padding: 5px 40px;
+    background-color:#E63946;
+    border: #F1FAEE solid 2px;
+    border-radius: 50px;
+}
