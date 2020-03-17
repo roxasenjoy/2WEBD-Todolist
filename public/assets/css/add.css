@@ -42,6 +42,7 @@
             background-color:#1D3557;
             padding: 10px 40px;
             border-radius: 7px;
+            margin-right: 5px;
         }
 
         .previous:hover{
@@ -56,4 +57,11 @@
             border: #1D3557 solid 1px;
             border-radius: 7px;
             padding: 7px 40px;
+            margin-left: 5px;
         }
+
+    button[type=submit]:hover{
+        background-color:#F1FAEE;
+        color: #182C47;
+        border-color: #182C47;
+    }

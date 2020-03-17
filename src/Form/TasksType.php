@@ -28,9 +28,9 @@ class TasksType extends AbstractType
                     'class' => 'field'
                     ],
                 'choices' => [
-                    'Urgent' => 'urgent',
-                    'Important' => 'important',
-                    'Autres' => 'autres'
+                    'Urgent' => 'Urgent',
+                    'Important' => 'Important',
+                    'Autres' => 'Autres'
                 ]
             ])
         ;

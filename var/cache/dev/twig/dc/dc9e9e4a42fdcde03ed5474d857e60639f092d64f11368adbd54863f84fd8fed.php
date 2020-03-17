@@ -85,13 +85,65 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "    <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
+        echo "
+    ";
+        // line 7
+        if ((isset($context["tasks"]) || array_key_exists("tasks", $context) ? $context["tasks"] : (function () { throw new RuntimeError('Variable "tasks" does not exist.', 7, $this->source); })())) {
+            // line 8
+            echo "        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["tasks"]) || array_key_exists("tasks", $context) ? $context["tasks"] : (function () { throw new RuntimeError('Variable "tasks" does not exist.', 8, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["task"]) {
+                // line 9
+                echo "            <div class=\"task container\">
+                <div class=\"row row-cols-3 m-auto\">
+                    <!-- Dès que la personne clique sur le bouton la question doit se faire delete -->
+                    <!-- Bouton delete -->
+                    <div class=\"delete_padding col-1 m-auto\">
+                        <div class=\"delete\"></div>
+                    </div>
+
+                    <!-- Tâche à faire -->
+                    <div class=\"task_padding col-8\">
+                        <div class=\"title\">";
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "title", [], "any", false, false, false, 19), "html", null, true);
+                echo "</div>
+                        <div class=\"status\">";
+                // line 20
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "status", [], "any", false, false, false, 20), "html", null, true);
+                echo "</div>
+                    </div>
+
+                    <!-- Options de la tâche -->
+                    <div class=\"option_padding col-2 m-auto\">
+                        <a class=\"share\" href=\"#\"><i class=\"fas fa-share-alt\"></i></a>
+                        <a class=\"modify\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i></a>
+                    </div>
+                </div>
+            </div>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['task'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 31
+            echo "    ";
+        } else {
+            // line 32
+            echo "        <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
+    ";
+        }
+        // line 34
+        echo "
+
+
 
 
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">
         <a href=\"";
-        // line 11
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add");
         echo "\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
     </div>
@@ -117,7 +169,7 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
 
     public function getDebugInfo()
     {
-        return array (  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  147 => 41,  138 => 34,  134 => 32,  131 => 31,  114 => 20,  110 => 19,  98 => 9,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,7 +179,37 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
 {% block css %}  <link rel=\"stylesheet\" href=\"assets/css/dashboard.css\"> {% endblock %}
 
 {% block content %}
-    <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
+
+    {% if tasks %}
+        {% for task in tasks %}
+            <div class=\"task container\">
+                <div class=\"row row-cols-3 m-auto\">
+                    <!-- Dès que la personne clique sur le bouton la question doit se faire delete -->
+                    <!-- Bouton delete -->
+                    <div class=\"delete_padding col-1 m-auto\">
+                        <div class=\"delete\"></div>
+                    </div>
+
+                    <!-- Tâche à faire -->
+                    <div class=\"task_padding col-8\">
+                        <div class=\"title\">{{ task.title }}</div>
+                        <div class=\"status\">{{ task.status }}</div>
+                    </div>
+
+                    <!-- Options de la tâche -->
+                    <div class=\"option_padding col-2 m-auto\">
+                        <a class=\"share\" href=\"#\"><i class=\"fas fa-share-alt\"></i></a>
+                        <a class=\"modify\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
+    {% endif %}
+
+
+
 
 
     <!-- Bouton pour ajouter une tâche -->

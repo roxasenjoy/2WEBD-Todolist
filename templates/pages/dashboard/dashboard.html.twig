@@ -3,7 +3,37 @@
 {% block css %}  <link rel="stylesheet" href="assets/css/dashboard.css"> {% endblock %}
 
 {% block content %}
-    <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
+
+    {% if tasks %}
+        {% for task in tasks %}
+            <div class="task container">
+                <div class="row row-cols-3 m-auto">
+                    <!-- Dès que la personne clique sur le bouton la question doit se faire delete -->
+                    <!-- Bouton delete -->
+                    <div class="delete_padding col-1 m-auto">
+                        <div class="delete"></div>
+                    </div>
+
+                    <!-- Tâche à faire -->
+                    <div class="task_padding col-8">
+                        <div class="title">{{ task.title }}</div>
+                        <div class="status">{{ task.status }}</div>
+                    </div>
+
+                    <!-- Options de la tâche -->
+                    <div class="option_padding col-2 m-auto">
+                        <a class="share" href="#"><i class="fas fa-share-alt"></i></a>
+                        <a class="modify" href="#"><i class="fas fa-pencil-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
+    {% endif %}
+
+
+
 
 
     <!-- Bouton pour ajouter une tâche -->
