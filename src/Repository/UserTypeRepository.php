@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\UserType;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method UserType|null find($id, $lockMode = null, $lockVersion = null)
- * @method UserType|null findOneBy(array $criteria, array $orderBy = null)
- * @method UserType[]    findAll()
- * @method UserType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method User|null find($id, $lockMode = null, $lockVersion = null)
+ * @method User|null findOneBy(array $criteria, array $orderBy = null)
+ * @method User[]    findAll()
+ * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class UserTypeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, UserType::class);
+        parent::__construct($registry, User::class);
     }
 
     // /**

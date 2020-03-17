@@ -19,7 +19,7 @@
         {% block header %}
             <nav class="navbar navbar-expand-md sticky-top nav">
                 <!-- Titre de notre site -->
-                <a class="navbar-brand title" href="#">TodoList</a>
+                <a class="navbar-brand logo" href="#">TodoList</a>
 
                 <!-- Toggler/collapsibe Button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
@@ -45,6 +45,11 @@
                 </div>
             </nav>
         {% endblock %}
+
+        <!-- Défini le titre de la page -->
+        <div class="m-auto page_name">
+            <h3 class="text-center">{% block page_name %}{% endblock %}</h3>
+        </div>
 
         <!-- Contenu de la page -->
         {% block content %}{% endblock %}

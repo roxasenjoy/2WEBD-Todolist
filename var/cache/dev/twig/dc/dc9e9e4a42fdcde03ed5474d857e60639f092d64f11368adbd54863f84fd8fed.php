@@ -90,7 +90,10 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
 
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">
-        <a href=\"#\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
+        <a href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add");
+        echo "\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
     </div>
 
 ";
@@ -114,7 +117,7 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -129,7 +132,7 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
 
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">
-        <a href=\"#\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
+        <a href=\"{{ path('add') }}\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
     </div>
 
 {% endblock %}

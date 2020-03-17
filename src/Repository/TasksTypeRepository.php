@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\TasksType;
+use App\Entity\Tasks;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method TasksType|null find($id, $lockMode = null, $lockVersion = null)
- * @method TasksType|null findOneBy(array $criteria, array $orderBy = null)
- * @method TasksType[]    findAll()
- * @method TasksType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tasks|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tasks|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tasks[]    findAll()
+ * @method Tasks[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TasksTypeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, TasksType::class);
+        parent::__construct($registry, Tasks::class);
     }
 
     // /**

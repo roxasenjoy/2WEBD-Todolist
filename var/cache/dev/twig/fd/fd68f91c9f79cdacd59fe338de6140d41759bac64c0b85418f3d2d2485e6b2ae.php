@@ -32,6 +32,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
             'css' => [$this, 'block_css'],
             'body' => [$this, 'block_body'],
             'header' => [$this, 'block_header'],
+            'page_name' => [$this, 'block_page_name'],
             'content' => [$this, 'block_content'],
         ];
     }
@@ -58,7 +59,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
     ";
         // line 17
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 65
         echo "</html>
 ";
         
@@ -159,11 +160,19 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $this->displayBlock('header', $context, $blocks);
         // line 48
         echo "
+        <!-- Défini le titre de la page -->
+        <div class=\"m-auto page_name\">
+            <h3 class=\"text-center\">";
+        // line 51
+        $this->displayBlock('page_name', $context, $blocks);
+        echo "</h3>
+        </div>
+
         <!-- Contenu de la page -->
         ";
-        // line 50
+        // line 55
         $this->displayBlock('content', $context, $blocks);
-        // line 51
+        // line 56
         echo "
         <!-- Icone -->
         <script src=\"https://kit.fontawesome.com/128f69e9e2.js\"></script>
@@ -194,7 +203,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         // line 20
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
-                <a class=\"navbar-brand title\" href=\"#\">TodoList</a>
+                <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
 
                 <!-- Toggler/collapsibe Button -->
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#menu\">
@@ -228,7 +237,25 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 50
+    // line 51
+    public function block_page_name($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "page_name"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "page_name"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 55
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -253,7 +280,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  232 => 50,  195 => 20,  185 => 19,  167 => 51,  165 => 50,  161 => 48,  159 => 19,  156 => 18,  146 => 17,  127 => 13,  108 => 6,  98 => 14,  96 => 13,  86 => 6,  83 => 5,  73 => 4,  62 => 60,  60 => 17,  56 => 15,  54 => 4,  49 => 1,);
+        return array (  259 => 55,  241 => 51,  204 => 20,  194 => 19,  176 => 56,  174 => 55,  167 => 51,  162 => 48,  160 => 19,  157 => 18,  147 => 17,  128 => 13,  109 => 6,  99 => 14,  97 => 13,  87 => 6,  84 => 5,  74 => 4,  63 => 65,  61 => 17,  57 => 15,  55 => 4,  50 => 1,);
     }
 
     public function getSourceContext()
@@ -279,7 +306,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         {% block header %}
             <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
-                <a class=\"navbar-brand title\" href=\"#\">TodoList</a>
+                <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
 
                 <!-- Toggler/collapsibe Button -->
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#menu\">
@@ -305,6 +332,11 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 </div>
             </nav>
         {% endblock %}
+
+        <!-- Défini le titre de la page -->
+        <div class=\"m-auto page_name\">
+            <h3 class=\"text-center\">{% block page_name %}{% endblock %}</h3>
+        </div>
 
         <!-- Contenu de la page -->
         {% block content %}{% endblock %}

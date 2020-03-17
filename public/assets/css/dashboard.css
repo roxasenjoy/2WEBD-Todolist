@@ -6,7 +6,6 @@
     .nothing{
         padding-top: 60%;
         color: #1D3557;
-        width: 80%;
         font-family: "Rockwell Nova";
     }
 
@@ -17,6 +16,11 @@
         border-radius: 1500px;
     }
 
+    .add_task:hover{
+        background: #182C47;
+    }
+
+    /* Icone : + */
     .add_task i{
         padding: 20px 10px;
         color:#F1FAEE;
