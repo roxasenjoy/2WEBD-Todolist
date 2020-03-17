@@ -1,0 +1,23 @@
+/************************************/
+/*               Content             */
+/************************************/
+
+    /* Rien à faire */
+    .nothing{
+        padding-top: 60%;
+        color: #1D3557;
+        width: 80%;
+        font-family: "Rockwell Nova";
+    }
+
+    /* Ajouter une todo */
+    .add_task{
+        font-size: 40px;
+        background: #1D3557;
+        border-radius: 1500px;
+    }
+
+    .add_task i{
+        padding: 20px 10px;
+        color:#F1FAEE;
+    }
