@@ -6586,17 +6586,17 @@
     },
     {
         "name": "symfony/web-server-bundle",
-        "version": "4.4.x-dev",
-        "version_normalized": "4.4.9999999.9999999-dev",
+        "version": "v4.4.5",
+        "version_normalized": "4.4.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/web-server-bundle.git",
-            "reference": "fe438443231563da8e58dcbd7bb62f4ee4bda383"
+            "reference": "92a37564d8577f01a21e7a77dab2f4fcad32f4ba"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/fe438443231563da8e58dcbd7bb62f4ee4bda383",
-            "reference": "fe438443231563da8e58dcbd7bb62f4ee4bda383",
+            "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/92a37564d8577f01a21e7a77dab2f4fcad32f4ba",
+            "reference": "92a37564d8577f01a21e7a77dab2f4fcad32f4ba",
             "shasum": ""
         },
         "require": {
@@ -6612,7 +6612,7 @@
             "symfony/expression-language": "For using the filter option of the log server.",
             "symfony/monolog-bridge": "For using the log server."
         },
-        "time": "2020-03-16T08:56:54+00:00",
+        "time": "2020-01-04T13:00:46+00:00",
         "type": "symfony-bundle",
         "extra": {
             "branch-alias": {

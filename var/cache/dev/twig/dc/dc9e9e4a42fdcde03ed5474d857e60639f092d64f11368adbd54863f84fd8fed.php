@@ -104,7 +104,10 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
                     </div>
 
                     <!-- Tâche à faire -->
-                    <div class=\"task_padding col-8\">
+                    <div class=\"task_padding col-8\" id=\"";
+                // line 18
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 18), "html", null, true);
+                echo "\">
                         <div class=\"title\">";
                 // line 19
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "title", [], "any", false, false, false, 19), "html", null, true);
@@ -136,14 +139,10 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
         }
         // line 34
         echo "
-
-
-
-
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">
         <a href=\"";
-        // line 41
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add");
         echo "\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
     </div>
@@ -169,7 +168,7 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
 
     public function getDebugInfo()
     {
-        return array (  147 => 41,  138 => 34,  134 => 32,  131 => 31,  114 => 20,  110 => 19,  98 => 9,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  146 => 37,  141 => 34,  137 => 32,  134 => 31,  117 => 20,  113 => 19,  109 => 18,  98 => 9,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -191,7 +190,7 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
                     </div>
 
                     <!-- Tâche à faire -->
-                    <div class=\"task_padding col-8\">
+                    <div class=\"task_padding col-8\" id=\"{{ task.id }}\">
                         <div class=\"title\">{{ task.title }}</div>
                         <div class=\"status\">{{ task.status }}</div>
                     </div>
@@ -207,10 +206,6 @@ class __TwigTemplate_e7e372503ccc4f848fcdb1313c9df1e2a38df321d0a658a3d86f000c180
     {% else %}
         <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
     {% endif %}
-
-
-
-
 
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">

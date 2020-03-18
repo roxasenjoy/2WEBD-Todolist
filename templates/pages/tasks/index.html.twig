@@ -1,0 +1,122 @@
+{% extends "/layouts/layout.html.twig" %}
+
+{% block content %}
+
+    {% if tasks %}
+        {% for task in tasks %}
+            <div class="task container">
+                <div class="row row-cols-3 m-auto">
+                    <!-- Dès que la personne clique sur le bouton la question doit se faire delete -->
+                    <!-- Bouton delete -->
+                    <form method="post" action="{{ path('tasks_delete', {'id': task.id}) }}" class="delete_padding m-auto pb-2">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ task.id) }}">
+                        <button class="delete"></button>
+                    </form>
+
+                    <!-- Tâche à faire -->
+                    <div class="task_padding col-8" id="{{ task.id }}">
+                        <div class="title">{{ task.title }}</div>
+                        <div class="status">{{ task.status }}</div>
+                    </div>
+
+                    <!-- Options de la tâche -->
+                    <div class="option_padding col-2 m-auto">
+                        <a class="share" href="#"><i class="fas fa-share-alt"></i></a>
+                        <a class="modify" href="{{ path('tasks_edit', {'id': task.id}) }}"><i class="fas fa-pencil-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
+    {% endif %}
+
+    <!-- Bouton pour ajouter une tâche -->
+    <div class="fixed-bottom text-right p-3">
+        <a href="{{ path('tasks_new') }}" class="add_task" role="button" aria-pressed="true"><i class="fas fa-plus"></i></a>
+    </div>
+
+    <style>
+        /************************************/
+        /*               Content             */
+        /************************************/
+
+        /* Rien à faire */
+        .nothing{
+            padding-top: 60%;
+            width:95%;
+            color: #1D3557;
+            font-family: "Rockwell Nova";
+        }
+
+        /* Section d'une tâche */
+        .task{
+            border: #1D3557 solid 1px;
+            width: 90%;
+            padding:5px 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Tâche fini - Delete */
+        .delete{
+            background: #F1FAEE;
+            margin-top: 0px;
+            border: solid 2px #1D3557;
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            cursor:pointer;
+        }
+
+        .delete:hover{
+            text-decoration: none;
+        }
+
+        /* Tâche à faire */
+        .title,.status{
+            color:#1D3557;
+            font-size: 16px;
+            font-family: "Rockwell Nova";
+        }
+
+        .status{
+            font-size: 12px;
+            font-family: "Rockwell Nova Light";
+        }
+
+        /* Options*/
+        .share, .modify{
+            font-size: 25px;
+            color:#1D3557;
+        }
+
+        /*Delete le padding de bootstrap */
+        .delete_padding, .task_padding, .option_padding{
+            padding: 0px;
+        }
+
+        /* Ajouter une todo */
+        .add_task{
+            font-size: 40px;
+            background: #1D3557;
+            border-radius: 150px;
+        }
+
+        .add_task:hover{
+            background: #182C47;
+        }
+
+        /* Icone : + */
+        .add_task i{
+            padding: 20px 10px;
+            color:#F1FAEE;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+

@@ -27,7 +27,6 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $this->parent = false;
 
         $this->blocks = [
-            'head' => [$this, 'block_head'],
             'title' => [$this, 'block_title'],
             'css' => [$this, 'block_css'],
             'body' => [$this, 'block_body'],
@@ -50,16 +49,24 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         echo "<!DOCTYPE html>
 <html>
     <head>
+        <meta charset=\"UTF-8\">
+        <title>";
+        // line 5
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+
+        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"/public/assets/css/layout.css\">
         ";
-        // line 4
-        $this->displayBlock('head', $context, $blocks);
-        // line 15
+        // line 9
+        $this->displayBlock('css', $context, $blocks);
+        // line 10
         echo "    </head>
 
     ";
-        // line 17
+        // line 12
         $this->displayBlock('body', $context, $blocks);
-        // line 65
+        // line 112
         echo "</html>
 ";
         
@@ -70,42 +77,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 4
-    public function block_head($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
-
-        // line 5
-        echo "                <meta charset=\"UTF-8\">
-                <title>";
-        // line 6
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-
-                <!-- Bootstrap -->
-                <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
-
-                <!-- CSS -->
-                <link rel=\"stylesheet\" href=\"assets/css/layout.css\">
-                ";
-        // line 13
-        $this->displayBlock('css', $context, $blocks);
-        // line 14
-        echo "        ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 6
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -124,7 +96,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 13
+    // line 9
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -143,7 +115,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 17
+    // line 12
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -153,26 +125,26 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 18
+        // line 13
         echo "    <body>
         ";
-        // line 19
+        // line 14
         $this->displayBlock('header', $context, $blocks);
-        // line 48
+        // line 43
         echo "
         <!-- Défini le titre de la page -->
         <div class=\"m-auto page_name\">
             <h3 class=\"text-center\">";
-        // line 51
+        // line 46
         $this->displayBlock('page_name', $context, $blocks);
         echo "</h3>
         </div>
 
         <!-- Contenu de la page -->
         ";
-        // line 55
+        // line 50
         $this->displayBlock('content', $context, $blocks);
-        // line 56
+        // line 51
         echo "
         <!-- Icone -->
         <script src=\"https://kit.fontawesome.com/128f69e9e2.js\"></script>
@@ -181,6 +153,58 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
 
     </body>
+
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+            }
+
+            /************************************/
+            /*               HEADER             */
+            /************************************/
+            /* Logo */
+            .logo{
+                color:#F1FAEE;
+                font-family: \"Rockwell Nova\";
+                font-size: 25px;
+                color: #F1FAEE;
+            }
+
+            /* Background de la naviguation */
+            .nav{
+                background-color:#1D3557;
+                color: #F1FAEE;
+            }
+
+            /* Menu de la naviguation */
+            nav a, nav a:hover{
+                text-decoration: none;
+                color: #F1FAEE;
+            }
+
+            nav i{
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                color: #F1FAEE;
+            }
+
+            /* Titre de la page en question */
+            .page_name{
+                width: 75%;
+
+            }
+
+            .page_name h3{
+                color:#1D3557;
+                font-size: 25px;
+                padding-bottom: 10px;
+                margin-top: 20px;
+                font-family: \"Rockwell Nova\";
+            }
+
+        </style>
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -190,7 +214,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 19
+    // line 14
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,7 +224,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 20
+        // line 15
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
                 <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
@@ -237,7 +261,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 51
+    // line 46
     public function block_page_name($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -255,7 +279,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 55
+    // line 50
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -280,7 +304,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  259 => 55,  241 => 51,  204 => 20,  194 => 19,  176 => 56,  174 => 55,  167 => 51,  162 => 48,  160 => 19,  157 => 18,  147 => 17,  128 => 13,  109 => 6,  99 => 14,  97 => 13,  87 => 6,  84 => 5,  74 => 4,  63 => 65,  61 => 17,  57 => 15,  55 => 4,  50 => 1,);
+        return array (  283 => 50,  265 => 46,  228 => 15,  218 => 14,  148 => 51,  146 => 50,  139 => 46,  134 => 43,  132 => 14,  129 => 13,  119 => 12,  100 => 9,  81 => 5,  70 => 112,  68 => 12,  64 => 10,  62 => 9,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -288,17 +312,12 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        {% block head %}
-                <meta charset=\"UTF-8\">
-                <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
+        <meta charset=\"UTF-8\">
+        <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
-                <!-- Bootstrap -->
-                <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
-
-                <!-- CSS -->
-                <link rel=\"stylesheet\" href=\"assets/css/layout.css\">
-                {% block css %}    {% endblock %}
-        {% endblock %}
+        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"/public/assets/css/layout.css\">
+        {% block css %}    {% endblock %}
     </head>
 
     {% block body %}
@@ -348,6 +367,58 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
 
     </body>
+
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+            }
+
+            /************************************/
+            /*               HEADER             */
+            /************************************/
+            /* Logo */
+            .logo{
+                color:#F1FAEE;
+                font-family: \"Rockwell Nova\";
+                font-size: 25px;
+                color: #F1FAEE;
+            }
+
+            /* Background de la naviguation */
+            .nav{
+                background-color:#1D3557;
+                color: #F1FAEE;
+            }
+
+            /* Menu de la naviguation */
+            nav a, nav a:hover{
+                text-decoration: none;
+                color: #F1FAEE;
+            }
+
+            nav i{
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                color: #F1FAEE;
+            }
+
+            /* Titre de la page en question */
+            .page_name{
+                width: 75%;
+
+            }
+
+            .page_name h3{
+                color:#1D3557;
+                font-size: 25px;
+                padding-bottom: 10px;
+                margin-top: 20px;
+                font-family: \"Rockwell Nova\";
+            }
+
+        </style>
     {% endblock %}
 </html>
 ", "/layouts/layout.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\layouts\\layout.html.twig");

@@ -1,0 +1,95 @@
+{% extends "/layouts/layout.html.twig" %}
+
+{% block title %}TodoList - Edition{% endblock %}
+
+{% block content %}
+
+    <div class="m-auto add_form">
+        {{ form_start(form) }}
+        <!-- Tâche à faire -->
+        <div>{{ form_label(form.title) }}</div>
+        <div>{{ form_widget(form.title) }}</div>
+        <!-- Urgence de la tâche -->
+        <div>{{ form_label(form.status) }}</div>
+        <div>{{ form_widget(form.status) }}</div>
+
+        <div class="text-center fixed-bottom mb-5">
+            <a href="{{ path('tasks_index') }}" class="previous">Retour</a>
+            <button>{{ 'Valider' }}</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+    <style>
+        *{
+            padding:0px;
+            margin: 0px;
+            font-family: "Rockwell Nova Light";
+            color: #1D3557;
+            font-size: 18px;
+        }
+
+        /* Formulaire */
+        .add_form{
+            width: 85%;
+        }
+
+        /* Les champs des formulaires */
+        .add_form .field{
+            width: 100%;
+        }
+
+        input, select{
+            margin-bottom: 40px;
+            border: none;
+            border-bottom: #1D3557 solid 1px;
+        }
+
+        select{
+            background-image:
+                    linear-gradient(45deg, transparent 50%, white 50%),
+                    linear-gradient(135deg, white 50%, transparent 50%),
+                    linear-gradient(to right, #1D3557, #1D3557);
+            background-position:
+                    100% 0;
+            background-size:
+                    20px 20px, 20px 20px;
+            background-repeat: no-repeat;
+            -webkit-appearance: none;
+        }
+
+        /* Retour à la page précédente */
+        .previous{
+            text-decoration: none;
+            color: #F1FAEE;
+            background-color:#1D3557;
+            padding: 10px 40px;
+            border-radius: 7px;
+            margin-right: 5px;
+        }
+
+        .previous:hover{
+            background-color:#182C47;
+            text-decoration: none;
+            color: #F1FAEE;
+        }
+
+        /* Bouton de validation du formulaire */
+        button{
+            color: #182C47;
+            border: #1D3557 solid 1px;
+            border-radius: 7px;
+            padding: 7px 40px;
+            margin-left: 5px;
+        }
+
+        button:hover{
+            background-color:#F1FAEE;
+            color: #182C47;
+            border-color: #182C47;
+        }
+
+    </style>
+
+{% endblock %}
