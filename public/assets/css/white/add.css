@@ -52,7 +52,7 @@
         }
 
         /* Bouton de validation du formulaire */
-        button[type=submit]{
+        button{
             color: #182C47;
             border: #1D3557 solid 1px;
             border-radius: 7px;
@@ -60,8 +60,8 @@
             margin-left: 5px;
         }
 
-    button[type=submit]:hover{
-        background-color:#F1FAEE;
-        color: #182C47;
-        border-color: #182C47;
-    }
+        button:hover{
+            background-color:#F1FAEE;
+            color: #182C47;
+            border-color: #182C47;
+        }

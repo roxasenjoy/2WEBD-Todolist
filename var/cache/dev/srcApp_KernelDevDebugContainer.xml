@@ -317,13 +317,6 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\var\log/dev.log</argument>
     </service>
-    <service id="App\Controller\AddController" class="App\Controller\AddController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\AddController"/>
-      </call>
-    </service>
     <service id="App\Controller\FriendsController" class="App\Controller\FriendsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -4670,9 +4663,6 @@
         <argument>server:status</argument>
       </call>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AddController" class="App\Controller\AddController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AddController" class="App\Controller\AddController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\AddController" class="App\Controller\AddController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5179,12 +5169,6 @@
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
-    </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\AddController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\AddController"/>
-      <argument>App\Controller\AddController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
     <service id=".service_locator.vdmMuyE.App\Controller\FriendsController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\FriendsController"/>

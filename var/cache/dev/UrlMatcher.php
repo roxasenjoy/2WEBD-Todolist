@@ -13,7 +13,6 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/adds' => [[['_route' => 'add', '_controller' => 'App\\Controller\\AddController::index'], null, null, null, false, false, null]],
         '/friends' => [[['_route' => 'friends', '_controller' => 'App\\Controller\\FriendsController::friends'], null, null, null, false, false, null]],
         '/friends/add' => [[['_route' => 'add_friends', '_controller' => 'App\\Controller\\FriendsController::add_friends'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'login', '_controller' => 'App\\Controller\\HomeController::login'], null, null, null, false, false, null]],

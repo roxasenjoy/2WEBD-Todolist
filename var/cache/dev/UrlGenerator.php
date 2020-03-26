@@ -15,7 +15,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
-    'add' => [[], ['_controller' => 'App\\Controller\\AddController::index'], [], [['text', '/adds']], [], []],
     'friends' => [[], ['_controller' => 'App\\Controller\\FriendsController::friends'], [], [['text', '/friends']], [], []],
     'add_friends' => [[], ['_controller' => 'App\\Controller\\FriendsController::add_friends'], [], [['text', '/friends/add']], [], []],
     'login' => [[], ['_controller' => 'App\\Controller\\HomeController::login'], [], [['text', '/']], [], []],

@@ -56,7 +56,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         echo "</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"/public/assets/css/layout.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/white/layout.css\">
         ";
         // line 9
         $this->displayBlock('css', $context, $blocks);
@@ -66,7 +66,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
     ";
         // line 12
         $this->displayBlock('body', $context, $blocks);
-        // line 112
+        // line 62
         echo "</html>
 ";
         
@@ -154,57 +154,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     </body>
 
-        <style>
-            *{
-                margin:0px;
-                padding:0px;
-            }
 
-            /************************************/
-            /*               HEADER             */
-            /************************************/
-            /* Logo */
-            .logo{
-                color:#F1FAEE;
-                font-family: \"Rockwell Nova\";
-                font-size: 25px;
-                color: #F1FAEE;
-            }
-
-            /* Background de la naviguation */
-            .nav{
-                background-color:#1D3557;
-                color: #F1FAEE;
-            }
-
-            /* Menu de la naviguation */
-            nav a, nav a:hover{
-                text-decoration: none;
-                color: #F1FAEE;
-            }
-
-            nav i{
-                margin-right: 10px;
-                width: 20px;
-                height: 20px;
-                color: #F1FAEE;
-            }
-
-            /* Titre de la page en question */
-            .page_name{
-                width: 75%;
-
-            }
-
-            .page_name h3{
-                color:#1D3557;
-                font-size: 25px;
-                padding-bottom: 10px;
-                margin-top: 20px;
-                font-family: \"Rockwell Nova\";
-            }
-
-        </style>
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -304,7 +254,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  283 => 50,  265 => 46,  228 => 15,  218 => 14,  148 => 51,  146 => 50,  139 => 46,  134 => 43,  132 => 14,  129 => 13,  119 => 12,  100 => 9,  81 => 5,  70 => 112,  68 => 12,  64 => 10,  62 => 9,  55 => 5,  49 => 1,);
+        return array (  233 => 50,  215 => 46,  178 => 15,  168 => 14,  148 => 51,  146 => 50,  139 => 46,  134 => 43,  132 => 14,  129 => 13,  119 => 12,  100 => 9,  81 => 5,  70 => 62,  68 => 12,  64 => 10,  62 => 9,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -316,7 +266,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"/public/assets/css/layout.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/white/layout.css\">
         {% block css %}    {% endblock %}
     </head>
 
@@ -368,57 +318,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     </body>
 
-        <style>
-            *{
-                margin:0px;
-                padding:0px;
-            }
 
-            /************************************/
-            /*               HEADER             */
-            /************************************/
-            /* Logo */
-            .logo{
-                color:#F1FAEE;
-                font-family: \"Rockwell Nova\";
-                font-size: 25px;
-                color: #F1FAEE;
-            }
-
-            /* Background de la naviguation */
-            .nav{
-                background-color:#1D3557;
-                color: #F1FAEE;
-            }
-
-            /* Menu de la naviguation */
-            nav a, nav a:hover{
-                text-decoration: none;
-                color: #F1FAEE;
-            }
-
-            nav i{
-                margin-right: 10px;
-                width: 20px;
-                height: 20px;
-                color: #F1FAEE;
-            }
-
-            /* Titre de la page en question */
-            .page_name{
-                width: 75%;
-
-            }
-
-            .page_name h3{
-                color:#1D3557;
-                font-size: 25px;
-                padding-bottom: 10px;
-                margin-top: 20px;
-                font-family: \"Rockwell Nova\";
-            }
-
-        </style>
     {% endblock %}
 </html>
 ", "/layouts/layout.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\layouts\\layout.html.twig");
