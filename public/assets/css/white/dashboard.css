@@ -16,13 +16,11 @@
         border: #1D3557 solid 1px;
         width: 90%;
         padding:5px 0px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
         /* Tâche fini - Delete */
         .delete{
-            background: #F1FAEE;
             border: solid 2px #1D3557;
             width: 20px;
             height: 20px;
@@ -72,3 +70,16 @@
         color:#F1FAEE;
     }
 
+    /* Titre de la page en question */
+    .page_name{
+        width: 75%;
+
+    }
+
+    .page_name h3{
+        color:#1D3557;
+        font-size: 25px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        font-family: "Rockwell Nova";
+    }

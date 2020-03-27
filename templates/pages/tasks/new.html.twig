@@ -2,7 +2,7 @@
 
 {% block title %}TodoList - Ajout{% endblock %}
 
-{% block css %}  <link rel="stylesheet" href="/assets/css/white/add.css">  {% endblock %}
+{% block css %}  <!--<link rel="stylesheet" href="/assets/css/white/add.css" id="add">-->  {% endblock %}
 
 {% block content %}
 
@@ -17,7 +17,7 @@
 
         <div class="text-center fixed-bottom mb-5">
             <a href="{{ path('tasks_index') }}" class="previous">Retour</a>
-            <button>{{ 'Valider' }}</button>
+            <button class="next button">{{ 'Valider' }}</button>
         </div>
 
         {{ form_end(form) }}

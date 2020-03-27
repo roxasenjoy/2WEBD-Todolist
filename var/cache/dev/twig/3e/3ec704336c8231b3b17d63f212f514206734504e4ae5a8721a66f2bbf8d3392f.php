@@ -55,7 +55,7 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
 
     }
 
-    // line 5
+    // line 3
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,7 +65,7 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
 
-        echo "  <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\">  ";
+        echo "   <!--  <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> Dashboard --> ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -74,7 +74,7 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
 
     }
 
-    // line 7
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,15 +84,17 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 8
-        echo "
-    <!-- DASHBOARD -->
-
+        // line 7
+        echo "    <!---------------
+        DASHBOARD
+    ----------------->
     ";
-        // line 11
-        if ((isset($context["tasks"]) || array_key_exists("tasks", $context) ? $context["tasks"] : (function () { throw new RuntimeError('Variable "tasks" does not exist.', 11, $this->source); })())) {
+        // line 10
+        if ((isset($context["tasks"]) || array_key_exists("tasks", $context) ? $context["tasks"] : (function () { throw new RuntimeError('Variable "tasks" does not exist.', 10, $this->source); })())) {
+            // line 11
+            echo "        <div class=\"content_task\">
+        ";
             // line 12
-            echo "        ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["tasks"]) || array_key_exists("tasks", $context) ? $context["tasks"] : (function () { throw new RuntimeError('Variable "tasks" does not exist.', 12, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["task"]) {
@@ -138,28 +140,29 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
                     </div>
                 </div>
             </div>
-        ";
+            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['task'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 37
-            echo "    ";
+            echo "        </div>
+        ";
         } else {
-            // line 38
-            echo "        <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
-    ";
+            // line 39
+            echo "            <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
+        ";
         }
-        // line 40
+        // line 41
         echo "
+
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">
         <a href=\"";
-        // line 43
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tasks_new");
         echo "\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
     </div>
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -181,22 +184,22 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
 
     public function getDebugInfo()
     {
-        return array (  159 => 43,  154 => 40,  150 => 38,  147 => 37,  136 => 32,  127 => 26,  123 => 25,  119 => 24,  111 => 19,  106 => 17,  100 => 13,  95 => 12,  93 => 11,  88 => 8,  78 => 7,  59 => 5,  36 => 1,);
+        return array (  163 => 45,  157 => 41,  153 => 39,  149 => 37,  138 => 32,  129 => 26,  125 => 25,  121 => 24,  113 => 19,  108 => 17,  102 => 13,  98 => 12,  95 => 11,  93 => 10,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"/layouts/layout.html.twig\" %}
 
+{% block css %}   <!--  <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> Dashboard --> {% endblock %}
 
-
-{% block css %}  <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\">  {% endblock %}
 
 {% block content %}
-
-    <!-- DASHBOARD -->
-
+    <!---------------
+        DASHBOARD
+    ----------------->
     {% if tasks %}
+        <div class=\"content_task\">
         {% for task in tasks %}
             <div class=\"task container\">
                 <div class=\"row row-cols-3 m-auto\">
@@ -221,16 +224,17 @@ class __TwigTemplate_180c819c791f60ec53c230e00b5cd2d4c8aa6c55c33f7cf633cab529150
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    {% else %}
-        <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
-    {% endif %}
+            {% endfor %}
+        </div>
+        {% else %}
+            <h3 class=\"text-center m-auto nothing\"> Vous n'avez rien à faire pour le moment...</h3>
+        {% endif %}
+
 
     <!-- Bouton pour ajouter une tâche -->
     <div class=\"fixed-bottom text-right p-3\">
         <a href=\"{{ path('tasks_new') }}\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
     </div>
-
 {% endblock %}
 
 

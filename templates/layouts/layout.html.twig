@@ -5,7 +5,11 @@
         <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/white/add.css" id="add">
         <link rel="stylesheet" href="/assets/css/white/layout.css">
+
+        <link rel="stylesheet" href="/assets/css/white/dashboard.css" id="dashboard"> <!-- Dashboard -->
+
         {% block css %}    {% endblock %}
     </head>
 
@@ -31,10 +35,10 @@
                             <a class="nav-link" href="#"><i class="fas fa-user-plus"></i>Ajouter des amis</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" aria-disabled="true" role="button"><i class="fas fa-adjust" ></i>Thème sombre</a>
+                            <a class="nav-link" href="#" aria-disabled="true" role="button"> <i class="fas fa-adjust" ></i><span id="theme">Thème</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i>Deconnexion</a>
+                            <a class="nav-link" href="{{ path('login') }}"><i class="fas fa-sign-out-alt"></i>Deconnexion</a>
                         </li>
                     </ul>
                 </div>
@@ -47,8 +51,55 @@
         </div>
 
         <!-- Contenu de la page -->
-        {% block content %}{% endblock %}
+        <div class="content">{% block content %}{% endblock %} </div>
 
+
+         <script>
+             window.onload = () => {
+                 // On va chercher la balise link
+                 let themeLink = document.getElementById("dashboard");
+                 let add = document.getElementById("add");
+
+
+
+                // Y'a t-il un thème stocker dans le localStorage
+                 if(localStorage.theme != null){
+                     themeLink.href = `/assets/css/${localStorage.theme}/dashboard.css`;
+                     add.href = `/assets/css/${localStorage.theme}/add.css`;
+                 }else{
+                     themeLink.href = "/assets/css/white/dashboard.css";
+                     add.href = "/assets/css/white/add.css";
+                    localStorage.theme = "white";
+                 }
+
+                 //Si la personne revient sur la page
+
+                 let theme = document.getElementById("theme");
+
+                 if(localStorage.theme == "white"){
+                     theme.innerText = "Thème sombre";
+                 }else{
+                     theme.innerText = "Thème clair";
+                 }
+
+                 // Ecouteur d'évènement "click" sur la span
+                 theme.addEventListener("click", function(){
+                     if(localStorage.theme == "white"){
+                        localStorage.theme = "dark";
+                        this.innerText = "Thème clair";
+                     }else if(localStorage.theme == "dark"){
+                         localStorage.theme = "white";
+                         this.innerText = "Thème sombre";
+                     }
+                     themeLink.href = `/assets/css/${localStorage.theme}/dashboard.css`;
+                     add.href = `/assets/css/${localStorage.theme}/add.css`;
+
+                 });
+
+             }
+
+
+         </script>
         <!-- Icone -->
         <script src="https://kit.fontawesome.com/128f69e9e2.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -56,6 +107,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     </body>
+
 
 
     {% endblock %}

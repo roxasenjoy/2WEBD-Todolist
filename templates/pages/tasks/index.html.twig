@@ -1,14 +1,14 @@
 {% extends "/layouts/layout.html.twig" %}
 
+{% block css %}   <!--  <link rel="stylesheet" href="/assets/css/white/dashboard.css" id="dashboard"> Dashboard --> {% endblock %}
 
-
-{% block css %}  <link rel="stylesheet" href="/assets/css/white/dashboard.css">  {% endblock %}
 
 {% block content %}
-
-    <!-- DASHBOARD -->
-
+    <!---------------
+        DASHBOARD
+    ----------------->
     {% if tasks %}
+        <div class="content_task">
         {% for task in tasks %}
             <div class="task container">
                 <div class="row row-cols-3 m-auto">
@@ -33,16 +33,17 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    {% else %}
-        <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
-    {% endif %}
+            {% endfor %}
+        </div>
+        {% else %}
+            <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
+        {% endif %}
+
 
     <!-- Bouton pour ajouter une tâche -->
     <div class="fixed-bottom text-right p-3">
         <a href="{{ path('tasks_new') }}" class="add_task" role="button" aria-pressed="true"><i class="fas fa-plus"></i></a>
     </div>
-
 {% endblock %}
 
 

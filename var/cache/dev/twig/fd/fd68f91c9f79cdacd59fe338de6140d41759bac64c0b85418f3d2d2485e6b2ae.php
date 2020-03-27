@@ -56,17 +56,21 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         echo "</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\">
         <link rel=\"stylesheet\" href=\"/assets/css/white/layout.css\">
+
+        <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
+
         ";
-        // line 9
+        // line 13
         $this->displayBlock('css', $context, $blocks);
-        // line 10
+        // line 14
         echo "    </head>
 
     ";
-        // line 12
+        // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 62
+        // line 114
         echo "</html>
 ";
         
@@ -96,7 +100,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 9
+    // line 13
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -115,7 +119,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 12
+    // line 16
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -125,27 +129,74 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 13
+        // line 17
         echo "    <body>
         ";
-        // line 14
+        // line 18
         $this->displayBlock('header', $context, $blocks);
-        // line 43
+        // line 47
         echo "
         <!-- Défini le titre de la page -->
         <div class=\"m-auto page_name\">
             <h3 class=\"text-center\">";
-        // line 46
+        // line 50
         $this->displayBlock('page_name', $context, $blocks);
         echo "</h3>
         </div>
 
         <!-- Contenu de la page -->
-        ";
-        // line 50
+        <div class=\"content\">";
+        // line 54
         $this->displayBlock('content', $context, $blocks);
-        // line 51
-        echo "
+        echo " </div>
+
+
+         <script>
+             window.onload = () => {
+                 // On va chercher la balise link
+                 let themeLink = document.getElementById(\"dashboard\");
+                 let add = document.getElementById(\"add\");
+
+
+
+                // Y'a t-il un thème stocker dans le localStorage
+                 if(localStorage.theme != null){
+                     themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
+                     add.href = `/assets/css/\${localStorage.theme}/add.css`;
+                 }else{
+                     themeLink.href = \"/assets/css/white/dashboard.css\";
+                     add.href = \"/assets/css/white/add.css\";
+                    localStorage.theme = \"white\";
+                 }
+
+                 //Si la personne revient sur la page
+
+                 let theme = document.getElementById(\"theme\");
+
+                 if(localStorage.theme == \"white\"){
+                     theme.innerText = \"Thème sombre\";
+                 }else{
+                     theme.innerText = \"Thème clair\";
+                 }
+
+                 // Ecouteur d'évènement \"click\" sur la span
+                 theme.addEventListener(\"click\", function(){
+                     if(localStorage.theme == \"white\"){
+                        localStorage.theme = \"dark\";
+                        this.innerText = \"Thème clair\";
+                     }else if(localStorage.theme == \"dark\"){
+                         localStorage.theme = \"white\";
+                         this.innerText = \"Thème sombre\";
+                     }
+                     themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
+                     add.href = `/assets/css/\${localStorage.theme}/add.css`;
+
+                 });
+
+             }
+
+
+         </script>
         <!-- Icone -->
         <script src=\"https://kit.fontawesome.com/128f69e9e2.js\"></script>
         <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>
@@ -153,6 +204,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
 
     </body>
+
 
 
     ";
@@ -164,7 +216,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 14
+    // line 18
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -174,7 +226,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 15
+        // line 19
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
                 <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
@@ -194,10 +246,13 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                             <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"><i class=\"fas fa-adjust\" ></i>Thème sombre</a>
+                            <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
+                            <a class=\"nav-link\" href=\"";
+        // line 41
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
                     </ul>
                 </div>
@@ -211,7 +266,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 46
+    // line 50
     public function block_page_name($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -229,7 +284,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 50
+    // line 54
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -254,7 +309,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  233 => 50,  215 => 46,  178 => 15,  168 => 14,  148 => 51,  146 => 50,  139 => 46,  134 => 43,  132 => 14,  129 => 13,  119 => 12,  100 => 9,  81 => 5,  70 => 62,  68 => 12,  64 => 10,  62 => 9,  55 => 5,  49 => 1,);
+        return array (  288 => 54,  270 => 50,  254 => 41,  230 => 19,  220 => 18,  150 => 54,  143 => 50,  138 => 47,  136 => 18,  133 => 17,  123 => 16,  104 => 13,  85 => 5,  74 => 114,  72 => 16,  68 => 14,  66 => 13,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -266,7 +321,11 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\">
         <link rel=\"stylesheet\" href=\"/assets/css/white/layout.css\">
+
+        <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
+
         {% block css %}    {% endblock %}
     </head>
 
@@ -292,10 +351,10 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                             <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"><i class=\"fas fa-adjust\" ></i>Thème sombre</a>
+                            <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
+                            <a class=\"nav-link\" href=\"{{ path('login') }}\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
                     </ul>
                 </div>
@@ -308,8 +367,55 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         </div>
 
         <!-- Contenu de la page -->
-        {% block content %}{% endblock %}
+        <div class=\"content\">{% block content %}{% endblock %} </div>
 
+
+         <script>
+             window.onload = () => {
+                 // On va chercher la balise link
+                 let themeLink = document.getElementById(\"dashboard\");
+                 let add = document.getElementById(\"add\");
+
+
+
+                // Y'a t-il un thème stocker dans le localStorage
+                 if(localStorage.theme != null){
+                     themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
+                     add.href = `/assets/css/\${localStorage.theme}/add.css`;
+                 }else{
+                     themeLink.href = \"/assets/css/white/dashboard.css\";
+                     add.href = \"/assets/css/white/add.css\";
+                    localStorage.theme = \"white\";
+                 }
+
+                 //Si la personne revient sur la page
+
+                 let theme = document.getElementById(\"theme\");
+
+                 if(localStorage.theme == \"white\"){
+                     theme.innerText = \"Thème sombre\";
+                 }else{
+                     theme.innerText = \"Thème clair\";
+                 }
+
+                 // Ecouteur d'évènement \"click\" sur la span
+                 theme.addEventListener(\"click\", function(){
+                     if(localStorage.theme == \"white\"){
+                        localStorage.theme = \"dark\";
+                        this.innerText = \"Thème clair\";
+                     }else if(localStorage.theme == \"dark\"){
+                         localStorage.theme = \"white\";
+                         this.innerText = \"Thème sombre\";
+                     }
+                     themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
+                     add.href = `/assets/css/\${localStorage.theme}/add.css`;
+
+                 });
+
+             }
+
+
+         </script>
         <!-- Icone -->
         <script src=\"https://kit.fontawesome.com/128f69e9e2.js\"></script>
         <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>
@@ -317,6 +423,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
 
     </body>
+
 
 
     {% endblock %}

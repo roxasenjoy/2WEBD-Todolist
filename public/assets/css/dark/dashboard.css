@@ -1,0 +1,88 @@
+
+
+/************************************/
+/*               Content             */
+/************************************/
+body{
+    background: #1D3557;
+}
+
+/* Rien à faire */
+.nothing{
+    padding-top: 60%;
+    color: #F1FAEE;
+    font-family: "Rockwell Nova";
+}
+
+/* Contenu de toutes les tâches */
+.content_task{
+    padding-top: 30px;
+}
+
+/* Section d'une tâche */
+.task{
+    border: #F1FAEE solid 2px;
+    width: 90%;
+    padding:5px 0px;
+    margin-bottom: 20px;
+}
+
+/* Tâche fini - Delete */
+.delete{
+    border: solid 2px #F1FAEE;
+    background-color:#1D3557;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    cursor:pointer;
+}
+
+/* Tâche à faire */
+.title,.status{
+    color:#F1FAEE;
+    font-size: 16px;
+    font-family: "Rockwell Nova";
+}
+
+.status{
+    font-size: 12px;
+    font-family: "Rockwell Nova Light";
+}
+
+/* Options*/
+.share, .modify{
+    font-size: 25px;
+    color:#F1FAEE;
+}
+
+
+/*Delete le padding de bootstrap */
+.delete_padding, .task_padding, .option_padding{
+    padding: 0px;
+}
+
+
+/* Ajouter une todo */
+.add_task{
+    font-size: 40px;
+    background: #F1FAEE;
+    border-radius: 150px;
+}
+
+/* Icone : + */
+.add_task i{
+    padding: 20px 10px;
+    color:#1D3557;
+}
+
+/* Titre de la page en question */
+.page_name{
+    width: 75%;
+
+}
+
+.page_name h3{
+    color:#F1FAEE;
+    font-size: 25px;
+    font-family: "Rockwell Nova";
+}

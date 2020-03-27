@@ -85,7 +85,7 @@ class __TwigTemplate_0a38c97c5a04b2a4174dee68a041fdd03b0daf65046c0b28d2bb82c6aea
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
 
-        echo "  <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\">  ";
+        echo "  <!--<link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\">-->  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -135,7 +135,7 @@ class __TwigTemplate_0a38c97c5a04b2a4174dee68a041fdd03b0daf65046c0b28d2bb82c6aea
         // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tasks_index");
         echo "\" class=\"previous\">Retour</a>
-            <button>";
+            <button class=\"next button\">";
         // line 20
         echo "Valider";
         echo "</button>
@@ -177,7 +177,7 @@ class __TwigTemplate_0a38c97c5a04b2a4174dee68a041fdd03b0daf65046c0b28d2bb82c6aea
 
 {% block title %}TodoList - Ajout{% endblock %}
 
-{% block css %}  <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\">  {% endblock %}
+{% block css %}  <!--<link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\">-->  {% endblock %}
 
 {% block content %}
 
@@ -192,7 +192,7 @@ class __TwigTemplate_0a38c97c5a04b2a4174dee68a041fdd03b0daf65046c0b28d2bb82c6aea
 
         <div class=\"text-center fixed-bottom mb-5\">
             <a href=\"{{ path('tasks_index') }}\" class=\"previous\">Retour</a>
-            <button>{{ 'Valider' }}</button>
+            <button class=\"next button\">{{ 'Valider' }}</button>
         </div>
 
         {{ form_end(form) }}

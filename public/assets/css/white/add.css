@@ -2,8 +2,6 @@
     padding:0px;
     margin: 0px;
     font-family: "Rockwell Nova Light";
-    color: #1D3557;
-    font-size: 18px;
 }
 
     /* Formulaire */
@@ -14,6 +12,12 @@
         /* Les champs des formulaires */
         .add_form .field{
             width: 100%;
+            color:#1D3557;
+        }
+
+        label {
+            color:#1D3557;
+            font-size: 20px;
         }
 
         input, select{
@@ -33,6 +37,7 @@
                     20px 20px, 20px 20px;
             background-repeat: no-repeat;
             -webkit-appearance: none;
+            color:#1D3557;
         }
 
         /* Retour à la page précédente */
@@ -52,7 +57,7 @@
         }
 
         /* Bouton de validation du formulaire */
-        button{
+        .button{
             color: #182C47;
             border: #1D3557 solid 1px;
             border-radius: 7px;
@@ -61,7 +66,7 @@
         }
 
         button:hover{
-            background-color:#F1FAEE;
+
             color: #182C47;
             border-color: #182C47;
         }
