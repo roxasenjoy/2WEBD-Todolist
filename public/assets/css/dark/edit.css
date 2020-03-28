@@ -1,0 +1,77 @@
+*{
+    padding:0px;
+    margin: 0px;
+    font-family: "Rockwell Nova Light";
+}
+
+body{
+    background: #1D3557;
+}
+
+
+
+/* Formulaire */
+.add_form{
+    width: 85%;
+}
+
+/* Les champs des formulaires */
+.add_form .field{
+    width: 100%;
+    padding: 5px;
+}
+
+label {
+    color:#F1FAEE;
+    font-size: 20px;
+}
+
+input, select{
+    margin-bottom: 40px;
+    border: none;
+    color:#F1FAEE;
+    border-bottom: #F1FAEE solid 1px;
+    background-color:#1D3557;
+}
+
+select{
+    background-image:
+            linear-gradient(45deg, transparent 50%, #1D3557 50%),
+            linear-gradient(135deg, #1D3557 50%, transparent 50%),
+            linear-gradient(to right, white, white);
+    background-position:
+            100% 0;
+    background-size:
+            20px 20px, 20px 20px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+}
+
+/* Validation du formulaire */
+.next{
+    background-color:#1D3557;
+}
+/* Retour à la page précédente */
+.previous{
+    text-decoration: none;
+    color: #1D3557;
+    background-color:#F1FAEE;
+    padding: 10px 40px;
+    border-radius: 7px;
+    margin-right: 5px;
+}
+
+.previous:hover{
+    text-decoration: none;
+    color:#1D3557;
+}
+
+/* Bouton de validation du formulaire */
+.button{
+    color: #F1FAEE;
+    border: #F1FAEE solid 1px;
+    border-radius: 7px;
+    padding: 7px 40px;
+    margin-left: 5px;
+}
+

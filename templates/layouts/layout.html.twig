@@ -5,10 +5,13 @@
         <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/white/add.css" id="add">
+
         <link rel="stylesheet" href="/assets/css/white/layout.css">
 
         <link rel="stylesheet" href="/assets/css/white/dashboard.css" id="dashboard"> <!-- Dashboard -->
+        <link rel="stylesheet" href="/assets/css/white/add.css" id="add"> <!-- Add -->
+        <link rel="stylesheet" href="/assets/css/white/edit.css" id="edit"> <!-- Add -->
+
 
         {% block css %}    {% endblock %}
     </head>
@@ -59,6 +62,7 @@
                  // On va chercher la balise link
                  let themeLink = document.getElementById("dashboard");
                  let add = document.getElementById("add");
+                 let edit = document.getElementById("edit");
 
 
 
@@ -66,14 +70,15 @@
                  if(localStorage.theme != null){
                      themeLink.href = `/assets/css/${localStorage.theme}/dashboard.css`;
                      add.href = `/assets/css/${localStorage.theme}/add.css`;
+                     edit.href = `/assets/css/${localStorage.theme}/edit.css`;
                  }else{
                      themeLink.href = "/assets/css/white/dashboard.css";
                      add.href = "/assets/css/white/add.css";
+                     edit.href = "/assets/css/white/add.css";
                     localStorage.theme = "white";
                  }
 
                  //Si la personne revient sur la page
-
                  let theme = document.getElementById("theme");
 
                  if(localStorage.theme == "white"){
@@ -93,6 +98,7 @@
                      }
                      themeLink.href = `/assets/css/${localStorage.theme}/dashboard.css`;
                      add.href = `/assets/css/${localStorage.theme}/add.css`;
+                     edit.href = `/assets/css/${localStorage.theme}/add.css`;
 
                  });
 

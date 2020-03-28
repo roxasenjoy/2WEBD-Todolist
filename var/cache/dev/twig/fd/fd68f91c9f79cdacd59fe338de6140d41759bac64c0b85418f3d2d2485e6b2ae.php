@@ -56,21 +56,24 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         echo "</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\">
+
         <link rel=\"stylesheet\" href=\"/assets/css/white/layout.css\">
 
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
+
 
         ";
-        // line 13
+        // line 16
         $this->displayBlock('css', $context, $blocks);
-        // line 14
+        // line 17
         echo "    </head>
 
     ";
-        // line 16
+        // line 19
         $this->displayBlock('body', $context, $blocks);
-        // line 114
+        // line 120
         echo "</html>
 ";
         
@@ -100,7 +103,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 13
+    // line 16
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -119,7 +122,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 16
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -129,24 +132,24 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 17
+        // line 20
         echo "    <body>
         ";
-        // line 18
+        // line 21
         $this->displayBlock('header', $context, $blocks);
-        // line 47
+        // line 50
         echo "
         <!-- Défini le titre de la page -->
         <div class=\"m-auto page_name\">
             <h3 class=\"text-center\">";
-        // line 50
+        // line 53
         $this->displayBlock('page_name', $context, $blocks);
         echo "</h3>
         </div>
 
         <!-- Contenu de la page -->
         <div class=\"content\">";
-        // line 54
+        // line 57
         $this->displayBlock('content', $context, $blocks);
         echo " </div>
 
@@ -156,6 +159,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                  // On va chercher la balise link
                  let themeLink = document.getElementById(\"dashboard\");
                  let add = document.getElementById(\"add\");
+                 let edit = document.getElementById(\"edit\");
 
 
 
@@ -163,14 +167,15 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                  if(localStorage.theme != null){
                      themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
                      add.href = `/assets/css/\${localStorage.theme}/add.css`;
+                     edit.href = `/assets/css/\${localStorage.theme}/edit.css`;
                  }else{
                      themeLink.href = \"/assets/css/white/dashboard.css\";
                      add.href = \"/assets/css/white/add.css\";
+                     edit.href = \"/assets/css/white/add.css\";
                     localStorage.theme = \"white\";
                  }
 
                  //Si la personne revient sur la page
-
                  let theme = document.getElementById(\"theme\");
 
                  if(localStorage.theme == \"white\"){
@@ -190,6 +195,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                      }
                      themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
                      add.href = `/assets/css/\${localStorage.theme}/add.css`;
+                     edit.href = `/assets/css/\${localStorage.theme}/add.css`;
 
                  });
 
@@ -216,7 +222,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 18
+    // line 21
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -226,7 +232,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 19
+        // line 22
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
                 <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
@@ -250,7 +256,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 41
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
@@ -266,7 +272,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 50
+    // line 53
     public function block_page_name($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -284,7 +290,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 54
+    // line 57
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -309,7 +315,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  288 => 54,  270 => 50,  254 => 41,  230 => 19,  220 => 18,  150 => 54,  143 => 50,  138 => 47,  136 => 18,  133 => 17,  123 => 16,  104 => 13,  85 => 5,  74 => 114,  72 => 16,  68 => 14,  66 => 13,  55 => 5,  49 => 1,);
+        return array (  294 => 57,  276 => 53,  260 => 44,  236 => 22,  226 => 21,  153 => 57,  146 => 53,  141 => 50,  139 => 21,  136 => 20,  126 => 19,  107 => 16,  88 => 5,  77 => 120,  75 => 19,  71 => 17,  69 => 16,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -321,10 +327,13 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\">
+
         <link rel=\"stylesheet\" href=\"/assets/css/white/layout.css\">
 
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
+
 
         {% block css %}    {% endblock %}
     </head>
@@ -375,6 +384,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                  // On va chercher la balise link
                  let themeLink = document.getElementById(\"dashboard\");
                  let add = document.getElementById(\"add\");
+                 let edit = document.getElementById(\"edit\");
 
 
 
@@ -382,14 +392,15 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                  if(localStorage.theme != null){
                      themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
                      add.href = `/assets/css/\${localStorage.theme}/add.css`;
+                     edit.href = `/assets/css/\${localStorage.theme}/edit.css`;
                  }else{
                      themeLink.href = \"/assets/css/white/dashboard.css\";
                      add.href = \"/assets/css/white/add.css\";
+                     edit.href = \"/assets/css/white/add.css\";
                     localStorage.theme = \"white\";
                  }
 
                  //Si la personne revient sur la page
-
                  let theme = document.getElementById(\"theme\");
 
                  if(localStorage.theme == \"white\"){
@@ -409,6 +420,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                      }
                      themeLink.href = `/assets/css/\${localStorage.theme}/dashboard.css`;
                      add.href = `/assets/css/\${localStorage.theme}/add.css`;
+                     edit.href = `/assets/css/\${localStorage.theme}/add.css`;
 
                  });
 

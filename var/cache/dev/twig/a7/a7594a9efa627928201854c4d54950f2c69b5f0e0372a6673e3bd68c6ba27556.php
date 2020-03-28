@@ -115,7 +115,7 @@ class __TwigTemplate_393493bd7cf0ba2b014f9f81162a1cba7874b7248af23acc57b72d1c261
         // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tasks_index");
         echo "\" class=\"previous\">Retour</a>
-            <button>";
+            <button class=\"next button\">";
         // line 18
         echo "Valider";
         echo "</button>
@@ -126,77 +126,6 @@ class __TwigTemplate_393493bd7cf0ba2b014f9f81162a1cba7874b7248af23acc57b72d1c261
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_end');
         echo "
     </div>
-
-    <style>
-        *{
-            padding:0px;
-            margin: 0px;
-            font-family: \"Rockwell Nova Light\";
-            color: #1D3557;
-            font-size: 18px;
-        }
-
-        /* Formulaire */
-        .add_form{
-            width: 85%;
-        }
-
-        /* Les champs des formulaires */
-        .add_form .field{
-            width: 100%;
-        }
-
-        input, select{
-            margin-bottom: 40px;
-            border: none;
-            border-bottom: #1D3557 solid 1px;
-        }
-
-        select{
-            background-image:
-                    linear-gradient(45deg, transparent 50%, white 50%),
-                    linear-gradient(135deg, white 50%, transparent 50%),
-                    linear-gradient(to right, #1D3557, #1D3557);
-            background-position:
-                    100% 0;
-            background-size:
-                    20px 20px, 20px 20px;
-            background-repeat: no-repeat;
-            -webkit-appearance: none;
-        }
-
-        /* Retour à la page précédente */
-        .previous{
-            text-decoration: none;
-            color: #F1FAEE;
-            background-color:#1D3557;
-            padding: 10px 40px;
-            border-radius: 7px;
-            margin-right: 5px;
-        }
-
-        .previous:hover{
-            background-color:#182C47;
-            text-decoration: none;
-            color: #F1FAEE;
-        }
-
-        /* Bouton de validation du formulaire */
-        button{
-            color: #182C47;
-            border: #1D3557 solid 1px;
-            border-radius: 7px;
-            padding: 7px 40px;
-            margin-left: 5px;
-        }
-
-        button:hover{
-            background-color:#F1FAEE;
-            color: #182C47;
-            border-color: #182C47;
-        }
-
-    </style>
 
 ";
         
@@ -241,82 +170,11 @@ class __TwigTemplate_393493bd7cf0ba2b014f9f81162a1cba7874b7248af23acc57b72d1c261
 
         <div class=\"text-center fixed-bottom mb-5\">
             <a href=\"{{ path('tasks_index') }}\" class=\"previous\">Retour</a>
-            <button>{{ 'Valider' }}</button>
+            <button class=\"next button\">{{ 'Valider' }}</button>
         </div>
 
         {{ form_end(form) }}
     </div>
-
-    <style>
-        *{
-            padding:0px;
-            margin: 0px;
-            font-family: \"Rockwell Nova Light\";
-            color: #1D3557;
-            font-size: 18px;
-        }
-
-        /* Formulaire */
-        .add_form{
-            width: 85%;
-        }
-
-        /* Les champs des formulaires */
-        .add_form .field{
-            width: 100%;
-        }
-
-        input, select{
-            margin-bottom: 40px;
-            border: none;
-            border-bottom: #1D3557 solid 1px;
-        }
-
-        select{
-            background-image:
-                    linear-gradient(45deg, transparent 50%, white 50%),
-                    linear-gradient(135deg, white 50%, transparent 50%),
-                    linear-gradient(to right, #1D3557, #1D3557);
-            background-position:
-                    100% 0;
-            background-size:
-                    20px 20px, 20px 20px;
-            background-repeat: no-repeat;
-            -webkit-appearance: none;
-        }
-
-        /* Retour à la page précédente */
-        .previous{
-            text-decoration: none;
-            color: #F1FAEE;
-            background-color:#1D3557;
-            padding: 10px 40px;
-            border-radius: 7px;
-            margin-right: 5px;
-        }
-
-        .previous:hover{
-            background-color:#182C47;
-            text-decoration: none;
-            color: #F1FAEE;
-        }
-
-        /* Bouton de validation du formulaire */
-        button{
-            color: #182C47;
-            border: #1D3557 solid 1px;
-            border-radius: 7px;
-            padding: 7px 40px;
-            margin-left: 5px;
-        }
-
-        button:hover{
-            background-color:#F1FAEE;
-            color: #182C47;
-            border-color: #182C47;
-        }
-
-    </style>
 
 {% endblock %}
 ", "pages/tasks/edit.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\pages\\tasks\\edit.html.twig");
