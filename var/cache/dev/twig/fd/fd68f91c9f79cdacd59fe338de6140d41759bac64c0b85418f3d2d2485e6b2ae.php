@@ -257,7 +257,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
         // line 44
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
                     </ul>
@@ -363,7 +363,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                             <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('login') }}\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
+                            <a class=\"nav-link\" href=\"{{ path('app_logout') }}\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
                     </ul>
                 </div>

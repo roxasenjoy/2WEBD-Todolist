@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList - Création de compte</title>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/128f69e9e2.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/register.css">
+</head>
+<body>
+
+    <!-- Flèche pour retourner en arrière -->
+    <div class="col-11 mt-2">
+        <a href="{{ path('app_login') }}">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+
+    <!-- Header de notre site -->
+    <header class="col-12 text-center pt-3 pb-4">
+        <h1 class="title pt-3 pb-3">TodoList</h1>
+    </header>
+
+    <!-- Formulaire de connexion -->
+    <div class="m-auto col-10">
+        <h1 id="login" class="col-12 mb-4">REGISTER</h1>
+
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.firstname) }}
+            {{ form_row(registrationForm.lastname) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword) }}
+
+            <button class="btn" type="submit">Register</button>
+
+
+
+
+        {{ form_end(registrationForm) }}
+
+
+            <!-- <label for="lastName" class="col-12">Nom</label>
+            <input type="text" name="lastName" placeholder="Entrez votre nom" class="col-12 mb-4" required>
+
+            <label for="email" class="col-12">Email</label>
+            <input type="email" name="email" placeholder="Entrez votre adresse email" class="col-12 mb-4" required>
+
+            <label for="password" class="col-12">Password</label>
+            <input type="password" name="password" placeholder="Entrez votre mot de passe" class="col-12 mb-4" required>
+
+            <div class="text-center mb-5 pb-3 fixed-bottom">
+                <button type="submit" class="register">Créer un compte</button>
+            </div> -->
+
+
+    </div>
+</body>
+</html>
+
+
+
+
+

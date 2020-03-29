@@ -12,18 +12,14 @@ class HomeController extends AbstractController
      */
     public function login()
     {
-        return $this->render('/pages/login.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        return $this->redirectToRoute('app_login');
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/registerTest", name="register")
      */
     public function register()
     {
-        return $this->render('/pages/register.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        return $this->redirectToRoute('app_register');
     }
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList - Login</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+    <body>
+        <!-- Header de notre site -->
+        <header class="col-12 text-center pt-5 pb-5">
+            <h1 class="title pt-3 pb-3">TodoList</h1>
+        </header>
+
+        <!-- Formulaire de connexion -->
+        <div class="m-auto col-10">
+            <h1 id="login" class="col-12 mb-4">LOGIN</h1>
+
+            <!-- SUPER FORMULAIRE -->
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <label for="inputEmail">Adresse Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+
+                <label for="inputPassword">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Se souvenir de moi
+                    </label>
+                </div>
+
+                <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+            </form>
+            <!-- <form>
+                <label for="email" class="col-12 justify-content-left">Email</label>
+                <input type="text" name="email" placeholder="Entrez votre adresse email" class="col-12 mb-4" required>
+
+                <label for="password" class="col-12">Password</label>
+                <input type="password" name="password" placeholder="Entrez votre mot de passe" class="col-12 mb-4" required>
+
+                <div class="text-center mb-5">
+                    <button type="submit" >Login</button>
+                </div>
+
+            </form> -->
+        </div>
+
+        <!-- Séparation avec le footer -->
+        <div class="separator"></div>
+
+        <!-- Création d'un compte -->
+        <footer>
+            <a id="create_account" class="fixed-bottom m-auto col-4 col-12  pb-1" href="{{ path('app_register') }}">Créer mon compte</a>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+

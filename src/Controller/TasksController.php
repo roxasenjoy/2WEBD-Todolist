@@ -67,13 +67,15 @@ class TasksController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
 
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($task);
+            $entityManager->flush();
             return $this->redirectToRoute('tasks_index');
         }
 
         return $this->render('pages/tasks/edit.html.twig', [
-            'task' => $task,
+            'task' => $task->getId(),
             'form' => $form->createView(),
         ]);
     }
