@@ -97,15 +97,12 @@ class __TwigTemplate_e246a9f57de833742752e4541e73b91557bb9a0021e0e5ad5de006e5753
         // line 39
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 39, $this->source); })()), "plainPassword", [], "any", false, false, false, 39), 'row');
         echo "
-
-            <button class=\"btn\" type=\"submit\">Register</button>
-
-
-
-
+        <div class=\"text-center mb-5 pb-3 fixed-bottom\">
+            <button type=\"submit\" class=\"register\">Créer un compte</button>
+        </div>
         ";
-        // line 46
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 46, $this->source); })()), 'form_end');
+        // line 43
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 43, $this->source); })()), 'form_end');
         echo "
 
 
@@ -152,7 +149,7 @@ class __TwigTemplate_e246a9f57de833742752e4541e73b91557bb9a0021e0e5ad5de006e5753
 
     public function getDebugInfo()
     {
-        return array (  108 => 46,  98 => 39,  94 => 38,  90 => 37,  86 => 36,  82 => 35,  65 => 21,  43 => 1,);
+        return array (  105 => 43,  98 => 39,  94 => 38,  90 => 37,  86 => 36,  82 => 35,  65 => 21,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -196,12 +193,9 @@ class __TwigTemplate_e246a9f57de833742752e4541e73b91557bb9a0021e0e5ad5de006e5753
             {{ form_row(registrationForm.lastname) }}
             {{ form_row(registrationForm.email) }}
             {{ form_row(registrationForm.plainPassword) }}
-
-            <button class=\"btn\" type=\"submit\">Register</button>
-
-
-
-
+        <div class=\"text-center mb-5 pb-3 fixed-bottom\">
+            <button type=\"submit\" class=\"register\">Créer un compte</button>
+        </div>
         {{ form_end(registrationForm) }}
 
 

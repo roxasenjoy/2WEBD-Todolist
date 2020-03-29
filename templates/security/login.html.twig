@@ -26,11 +26,11 @@
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
 
-                <label for="inputEmail">Adresse Email</label>
-                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                <label for="inputEmail" class="col-12 justify-content-left">Adresse Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control col-12 mb-4" placeholder="Entrez votre adresse email"  required autofocus>
 
-                <label for="inputPassword">Mot de passe</label>
-                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <label for="inputPassword" class="col-12">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control col-12 mb-4" placeholder="Entrez votre mot de passe" required>
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
@@ -40,20 +40,11 @@
                     </label>
                 </div>
 
-                <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
-            </form>
-            <!-- <form>
-                <label for="email" class="col-12 justify-content-left">Email</label>
-                <input type="text" name="email" placeholder="Entrez votre adresse email" class="col-12 mb-4" required>
-
-                <label for="password" class="col-12">Password</label>
-                <input type="password" name="password" placeholder="Entrez votre mot de passe" class="col-12 mb-4" required>
-
-                <div class="text-center mb-5">
-                    <button type="submit" >Login</button>
+                <div class="text-center mt-5">
+                    <button type="submit " >Se connecter</button>
                 </div>
+            </form>
 
-            </form> -->
         </div>
 
         <!-- Séparation avec le footer -->
@@ -61,7 +52,7 @@
 
         <!-- Création d'un compte -->
         <footer>
-            <a id="create_account" class="fixed-bottom m-auto col-4 col-12  pb-1" href="{{ path('app_register') }}">Créer mon compte</a>
+            <a id="create_account" class="fixed-bottom p-2 col-4 col-12  pb-1" href="{{ path('app_register') }}">Créer mon compte</a>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

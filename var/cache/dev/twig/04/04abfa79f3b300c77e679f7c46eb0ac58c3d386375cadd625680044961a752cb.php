@@ -75,14 +75,14 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
         }
         // line 28
         echo "
-                <label for=\"inputEmail\">Adresse Email</label>
+                <label for=\"inputEmail\" class=\"col-12 justify-content-left\">Adresse Email</label>
                 <input type=\"email\" value=\"";
         // line 30
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 30, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
+        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control col-12 mb-4\" placeholder=\"Entrez votre adresse email\"  required autofocus>
 
-                <label for=\"inputPassword\">Mot de passe</label>
-                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
+                <label for=\"inputPassword\" class=\"col-12\">Mot de passe</label>
+                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control col-12 mb-4\" placeholder=\"Entrez votre mot de passe\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
         // line 35
@@ -95,20 +95,11 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
                     </label>
                 </div>
 
-                <button class=\"btn btn-lg btn-primary\" type=\"submit\">Sign in</button>
-            </form>
-            <!-- <form>
-                <label for=\"email\" class=\"col-12 justify-content-left\">Email</label>
-                <input type=\"text\" name=\"email\" placeholder=\"Entrez votre adresse email\" class=\"col-12 mb-4\" required>
-
-                <label for=\"password\" class=\"col-12\">Password</label>
-                <input type=\"password\" name=\"password\" placeholder=\"Entrez votre mot de passe\" class=\"col-12 mb-4\" required>
-
-                <div class=\"text-center mb-5\">
-                    <button type=\"submit\" >Login</button>
+                <div class=\"text-center mt-5\">
+                    <button type=\"submit \" >Se connecter</button>
                 </div>
+            </form>
 
-            </form> -->
         </div>
 
         <!-- Séparation avec le footer -->
@@ -116,8 +107,8 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
 
         <!-- Création d'un compte -->
         <footer>
-            <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"";
-        // line 64
+            <a id=\"create_account\" class=\"fixed-bottom p-2 col-4 col-12  pb-1\" href=\"";
+        // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">Créer mon compte</a>
         </footer>
@@ -150,7 +141,7 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
 
     public function getDebugInfo()
     {
-        return array (  121 => 64,  89 => 35,  81 => 30,  77 => 28,  71 => 26,  69 => 25,  43 => 1,);
+        return array (  112 => 55,  89 => 35,  81 => 30,  77 => 28,  71 => 26,  69 => 25,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -183,11 +174,11 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
                     <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
 
-                <label for=\"inputEmail\">Adresse Email</label>
-                <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
+                <label for=\"inputEmail\" class=\"col-12 justify-content-left\">Adresse Email</label>
+                <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control col-12 mb-4\" placeholder=\"Entrez votre adresse email\"  required autofocus>
 
-                <label for=\"inputPassword\">Mot de passe</label>
-                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
+                <label for=\"inputPassword\" class=\"col-12\">Mot de passe</label>
+                <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control col-12 mb-4\" placeholder=\"Entrez votre mot de passe\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
 
@@ -197,20 +188,11 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
                     </label>
                 </div>
 
-                <button class=\"btn btn-lg btn-primary\" type=\"submit\">Sign in</button>
-            </form>
-            <!-- <form>
-                <label for=\"email\" class=\"col-12 justify-content-left\">Email</label>
-                <input type=\"text\" name=\"email\" placeholder=\"Entrez votre adresse email\" class=\"col-12 mb-4\" required>
-
-                <label for=\"password\" class=\"col-12\">Password</label>
-                <input type=\"password\" name=\"password\" placeholder=\"Entrez votre mot de passe\" class=\"col-12 mb-4\" required>
-
-                <div class=\"text-center mb-5\">
-                    <button type=\"submit\" >Login</button>
+                <div class=\"text-center mt-5\">
+                    <button type=\"submit \" >Se connecter</button>
                 </div>
+            </form>
 
-            </form> -->
         </div>
 
         <!-- Séparation avec le footer -->
@@ -218,7 +200,7 @@ class __TwigTemplate_f40a3309180875a56b32cc0017b4293b4f52545521e324cf5b65dd890b1
 
         <!-- Création d'un compte -->
         <footer>
-            <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"{{ path('app_register') }}\">Créer mon compte</a>
+            <a id=\"create_account\" class=\"fixed-bottom p-2 col-4 col-12  pb-1\" href=\"{{ path('app_register') }}\">Créer mon compte</a>
         </footer>
 
         <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>
