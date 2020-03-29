@@ -89,7 +89,7 @@ class __TwigTemplate_e62a6a2e1f7c1e0e702229dac2bfb41e37daf799eb9e3517c86f9c4bcb2
             <input type=\"password\" name=\"password\" placeholder=\"Entrez votre mot de passe\" class=\"col-12 mb-4\" required>
 
             <div class=\"text-center mb-5 pb-3 fixed-bottom\">
-                <button type=\"submit\" >Créer un compte</button>
+                <button type=\"submit\" class=\"register\">Créer un compte</button>
             </div>
 
         </form>
@@ -168,7 +168,7 @@ class __TwigTemplate_e62a6a2e1f7c1e0e702229dac2bfb41e37daf799eb9e3517c86f9c4bcb2
             <input type=\"password\" name=\"password\" placeholder=\"Entrez votre mot de passe\" class=\"col-12 mb-4\" required>
 
             <div class=\"text-center mb-5 pb-3 fixed-bottom\">
-                <button type=\"submit\" >Créer un compte</button>
+                <button type=\"submit\" class=\"register\">Créer un compte</button>
             </div>
 
         </form>

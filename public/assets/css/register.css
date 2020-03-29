@@ -37,3 +37,8 @@ button{
     border: #F1FAEE solid 2px;
     border-radius: 50px;
 }
+
+/* Bouton register */
+.register{
+    cursor: pointer;
+}

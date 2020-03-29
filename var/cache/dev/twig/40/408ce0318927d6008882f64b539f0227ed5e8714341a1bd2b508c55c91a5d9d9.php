@@ -80,7 +80,7 @@ class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f96107810
 
     <!-- Création d'un compte -->
     <footer>
-        <a id=\"create_account\" class=\"fixed-bottom m-auto col-10 col-12 pt-5 pb-1\" href=\"";
+        <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"";
         // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
         echo "\">Créer mon compte</a>
@@ -156,7 +156,7 @@ class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f96107810
 
     <!-- Création d'un compte -->
     <footer>
-        <a id=\"create_account\" class=\"fixed-bottom m-auto col-10 col-12 pt-5 pb-1\" href=\"{{ path('register') }}\">Créer mon compte</a>
+        <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"{{ path('register') }}\">Créer mon compte</a>
     </footer>
 
     <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>

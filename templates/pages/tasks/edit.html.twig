@@ -4,21 +4,24 @@
 
 {% block content %}
 
-    <div class="m-auto add_form">
-        {{ form_start(form) }}
-        <!-- Tâche à faire -->
-        <div>{{ form_label(form.title) }}</div>
-        <div>{{ form_widget(form.title) }}</div>
-        <!-- Urgence de la tâche -->
-        <div>{{ form_label(form.status) }}</div>
-        <div>{{ form_widget(form.status) }}</div>
+    <div class="content_edit">
+        <div class="m-auto add_form">
+            {{ form_start(form) }}
+            <!-- Tâche à faire -->
+            <div>{{ form_label(form.title) }}</div>
+            <div>{{ form_widget(form.title) }}</div>
+            <!-- Urgence de la tâche -->
+            <div>{{ form_label(form.status) }}</div>
+            <div>{{ form_widget(form.status) }}</div>
 
-        <div class="text-center fixed-bottom mb-5">
-            <a href="{{ path('tasks_index') }}" class="previous">Retour</a>
-            <button class="next button">{{ 'Valider' }}</button>
+            <div class="text-center fixed-bottom mb-5">
+                <a href="{{ path('tasks_index') }}" class="previous">Retour</a>
+                <button class="next button">{{ 'Valider' }}</button>
+            </div>
+
+            {{ form_end(form) }}
         </div>
-
-        {{ form_end(form) }}
     </div>
+
 
 {% endblock %}

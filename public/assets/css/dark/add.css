@@ -8,7 +8,9 @@ body{
     background: #1D3557;
 }
 
-
+    .content_add{
+        margin-top: 36px;
+    }
 
     /* Formulaire */
     .add_form{
@@ -18,7 +20,6 @@ body{
         /* Les champs des formulaires */
         .add_form .field{
             width: 100%;
-            padding: 5px;
         }
 
         label {
