@@ -2409,3 +2409,6 @@ a8ea39,127.0.0.1,GET,http://localhost:8000/login,1585517878,,200
 1cd635,127.0.0.1,GET,http://localhost:8000/login,1585517891,,200
 a51ae1,127.0.0.1,GET,http://localhost:8000/login,1585517973,,200
 e848a7,127.0.0.1,GET,http://localhost:8000/login,1585518019,,200
+1fddb8,127.0.0.1,GET,http://localhost:8000/register,1585559960,,200
+b1e019,127.0.0.1,GET,http://localhost:8000/register,1585559979,33a24c,500
+33a24c,127.0.0.1,POST,http://localhost:8000/register,1585559979,,500
