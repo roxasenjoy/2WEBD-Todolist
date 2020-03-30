@@ -105,21 +105,6 @@ class __TwigTemplate_e246a9f57de833742752e4541e73b91557bb9a0021e0e5ad5de006e5753
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 43, $this->source); })()), 'form_end');
         echo "
 
-
-            <!-- <label for=\"lastName\" class=\"col-12\">Nom</label>
-            <input type=\"text\" name=\"lastName\" placeholder=\"Entrez votre nom\" class=\"col-12 mb-4\" required>
-
-            <label for=\"email\" class=\"col-12\">Email</label>
-            <input type=\"email\" name=\"email\" placeholder=\"Entrez votre adresse email\" class=\"col-12 mb-4\" required>
-
-            <label for=\"password\" class=\"col-12\">Password</label>
-            <input type=\"password\" name=\"password\" placeholder=\"Entrez votre mot de passe\" class=\"col-12 mb-4\" required>
-
-            <div class=\"text-center mb-5 pb-3 fixed-bottom\">
-                <button type=\"submit\" class=\"register\">Créer un compte</button>
-            </div> -->
-
-
     </div>
 </body>
 </html>
@@ -197,21 +182,6 @@ class __TwigTemplate_e246a9f57de833742752e4541e73b91557bb9a0021e0e5ad5de006e5753
             <button type=\"submit\" class=\"register\">Créer un compte</button>
         </div>
         {{ form_end(registrationForm) }}
-
-
-            <!-- <label for=\"lastName\" class=\"col-12\">Nom</label>
-            <input type=\"text\" name=\"lastName\" placeholder=\"Entrez votre nom\" class=\"col-12 mb-4\" required>
-
-            <label for=\"email\" class=\"col-12\">Email</label>
-            <input type=\"email\" name=\"email\" placeholder=\"Entrez votre adresse email\" class=\"col-12 mb-4\" required>
-
-            <label for=\"password\" class=\"col-12\">Password</label>
-            <input type=\"password\" name=\"password\" placeholder=\"Entrez votre mot de passe\" class=\"col-12 mb-4\" required>
-
-            <div class=\"text-center mb-5 pb-3 fixed-bottom\">
-                <button type=\"submit\" class=\"register\">Créer un compte</button>
-            </div> -->
-
 
     </div>
 </body>

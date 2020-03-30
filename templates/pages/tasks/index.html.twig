@@ -7,46 +7,44 @@
     <!---------------
         DASHBOARD
     ----------------->
-    {% if is_granted('ROLE_USER') %}
-        {% if tasks %}
-            <div class="content_task">
-            {% for task in tasks %}
-                <div class="task container">
-                    <div class="row row-cols-3 m-auto">
-                        <!-- Dès que la personne clique sur le bouton la question doit se faire delete -->
-                        <!-- Bouton delete -->
-                        <form method="post" action="{{ path('tasks_delete', {'id': task.id}) }}" class="delete_padding m-auto pb-2">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ task.id) }}">
-                            <button class="delete"></button>
-                        </form>
+    {% if tasks %}
+        <div class="content_task">
+        {% for task in tasks %}
+            <div class="task container">
+                <div class="row row-cols-3 m-auto">
+                    <!-- Dès que la personne clique sur le bouton la question doit se faire delete -->
+                    <!-- Bouton delete -->
+                    <form method="post" action="{{ path('tasks_delete', {'id': task.id}) }}" class="delete_padding m-auto pb-2">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ task.id) }}">
+                        <button class="delete"></button>
+                    </form>
 
-                        <!-- Tâche à faire -->
-                        <div class="task_padding col-8" id="{{ task.id }}">
-                            <div class="title">{{ task.title }}</div>
-                            <div class="status">{{ task.status }}</div>
-                        </div>
+                    <!-- Tâche à faire -->
+                    <div class="task_padding col-8" id="{{ task.id }}">
+                        <div class="title">{{ task.title }}</div>
+                        <div class="status">{{ task.status }}</div>
+                    </div>
 
-                        <!-- Options de la tâche -->
-                        <div class="option_padding col-2 m-auto">
-                            <a class="share" href="#"><i class="fas fa-share-alt"></i></a>
-                            <a class="modify" href="{{ path('tasks_edit', {'id': task.id}) }}"><i class="fas fa-pencil-alt"></i></a>
-                        </div>
+                    <!-- Options de la tâche -->
+                    <div class="option_padding col-2 m-auto">
+                        <a class="share" href="#"><i class="fas fa-share-alt"></i></a>
+                        <a class="modify" href="{{ path('tasks_edit', {'id': task.id}) }}"><i class="fas fa-pencil-alt"></i></a>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-            {% else %}
-                <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
-            {% endif %}
-
-
-        <!-- Bouton pour ajouter une tâche -->
-        <div class="fixed-bottom text-right p-3">
-            <a href="{{ path('tasks_new') }}" class="add_task" role="button" aria-pressed="true"><i class="fas fa-plus"></i></a>
+            {% endfor %}
         </div>
+        {% else %}
+            <h3 class="text-center m-auto nothing"> Vous n'avez rien à faire pour le moment...</h3>
+        {% endif %}
 
-    {% endif %}
+
+    <!-- Bouton pour ajouter une tâche -->
+    <div class="fixed-bottom text-right p-3">
+        <a href="{{ path('tasks_new') }}" class="add_task" role="button" aria-pressed="true"><i class="fas fa-plus"></i></a>
+    </div>
+
 {% endblock %}
 
 
