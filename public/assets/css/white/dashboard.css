@@ -28,6 +28,10 @@
             cursor:pointer;
         }
 
+        .delete:hover{
+            background:#F1FAEE;
+        }
+
         /* Tâche à faire */
         .title,.status{
             color:#1D3557;
@@ -46,12 +50,15 @@
             color:#1D3557;
         }
 
+        .modify:hover, .share:hover{
+            color:#182C47;
+        }
+
 
     /*Delete le padding de bootstrap */
     .delete_padding, .task_padding, .option_padding{
         padding: 0px;
     }
-
 
     /* Ajouter une todo */
     .add_task{
@@ -73,7 +80,6 @@
     /* Titre de la page en question */
     .page_name{
         width: 75%;
-
     }
 
     .page_name h3{

@@ -58,22 +58,21 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
 
         <link rel=\"stylesheet\" href=\"/assets/css/layout.css\">
-
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
 
 
         ";
-        // line 16
+        // line 15
         $this->displayBlock('css', $context, $blocks);
-        // line 17
+        // line 16
         echo "    </head>
 
     ";
-        // line 19
+        // line 18
         $this->displayBlock('body', $context, $blocks);
-        // line 120
+        // line 117
         echo "</html>
 ";
         
@@ -103,7 +102,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 16
+    // line 15
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -122,7 +121,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 19
+    // line 18
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,24 +131,24 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 20
+        // line 19
         echo "    <body>
         ";
-        // line 21
+        // line 20
         $this->displayBlock('header', $context, $blocks);
-        // line 50
+        // line 49
         echo "
         <!-- Défini le titre de la page -->
         <div class=\"m-auto page_name\">
             <h3 class=\"text-center\">";
-        // line 53
+        // line 52
         $this->displayBlock('page_name', $context, $blocks);
         echo "</h3>
         </div>
 
         <!-- Contenu de la page -->
         <div class=\"content\">";
-        // line 57
+        // line 56
         $this->displayBlock('content', $context, $blocks);
         echo " </div>
 
@@ -160,8 +159,6 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                  let themeLink = document.getElementById(\"dashboard\");
                  let add = document.getElementById(\"add\");
                  let edit = document.getElementById(\"edit\");
-
-
 
                 // Y'a t-il un thème stocker dans le localStorage
                  if(localStorage.theme != null){
@@ -222,7 +219,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 21
+    // line 20
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -232,7 +229,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 22
+        // line 21
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
                 <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
@@ -256,7 +253,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 44
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
@@ -272,7 +269,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 53
+    // line 52
     public function block_page_name($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -290,7 +287,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 57
+    // line 56
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -315,7 +312,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  294 => 57,  276 => 53,  260 => 44,  236 => 22,  226 => 21,  153 => 57,  146 => 53,  141 => 50,  139 => 21,  136 => 20,  126 => 19,  107 => 16,  88 => 5,  77 => 120,  75 => 19,  71 => 17,  69 => 16,  55 => 5,  49 => 1,);
+        return array (  291 => 56,  273 => 52,  257 => 43,  233 => 21,  223 => 20,  152 => 56,  145 => 52,  140 => 49,  138 => 20,  135 => 19,  125 => 18,  106 => 15,  87 => 5,  76 => 117,  74 => 18,  70 => 16,  68 => 15,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -329,7 +326,6 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
 
         <link rel=\"stylesheet\" href=\"/assets/css/layout.css\">
-
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
@@ -385,8 +381,6 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                  let themeLink = document.getElementById(\"dashboard\");
                  let add = document.getElementById(\"add\");
                  let edit = document.getElementById(\"edit\");
-
-
 
                 // Y'a t-il un thème stocker dans le localStorage
                  if(localStorage.theme != null){

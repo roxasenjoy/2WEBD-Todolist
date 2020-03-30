@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Tasks;
+use App\Entity\User;
 use App\Form\TasksType;
 use App\Repository\TasksTypeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,14 +35,17 @@ class TasksController extends AbstractController
         $form = $this->createForm(TasksType::class, $task);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
+            $task->setUser($this->getUser()); /* CA TROUVE L'ID DE L'UTILISATEUR !!!!!!!!!!!!!!!!!!!!!!!! */
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($task);
             $entityManager->flush();
 
+
             return $this->redirectToRoute('tasks_index');
         }
-
+        $this->getUser();
         return $this->render('pages/tasks/new.html.twig', [
             'task' => $task,
             'form' => $form->createView(),

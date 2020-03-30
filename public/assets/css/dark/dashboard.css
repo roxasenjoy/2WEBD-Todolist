@@ -7,6 +7,19 @@ body{
     background: #1D3557;
 }
 
+/* Titre de la page en question */
+.page_name{
+    width: 75%;
+    margin: 20px auto !important;
+}
+
+.page_name h3{
+    color:#F1FAEE;
+    font-size: 25px;
+    font-family: "Rockwell Nova";
+}
+
+
 /* Rien à faire */
 .nothing{
     padding-top: 60%;
@@ -14,10 +27,6 @@ body{
     font-family: "Rockwell Nova";
 }
 
-/* Contenu de toutes les tâches */
-.content_task{
-    padding-top: 30px;
-}
 
 /* Section d'une tâche */
 .task{
@@ -37,6 +46,10 @@ body{
     cursor:pointer;
 }
 
+.delete:hover{
+    background:#F1FAEE;
+}
+
 /* Tâche à faire */
 .title,.status{
     color:#F1FAEE;
@@ -49,12 +62,16 @@ body{
     font-family: "Rockwell Nova Light";
 }
 
-/* Options*/
-.share, .modify{
-    font-size: 25px;
-    color:#F1FAEE;
-}
 
+    /* Options*/
+    .share, .modify{
+        font-size: 25px;
+        color:#F1FAEE;
+    }
+
+    .modify:hover, .share:hover{
+        color:#F1FAEE;
+    }
 
 /*Delete le padding de bootstrap */
 .delete_padding, .task_padding, .option_padding{
@@ -75,14 +92,4 @@ body{
     color:#1D3557;
 }
 
-/* Titre de la page en question */
-.page_name{
-    width: 75%;
 
-}
-
-.page_name h3{
-    color:#F1FAEE;
-    font-size: 25px;
-    font-family: "Rockwell Nova";
-}
