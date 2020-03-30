@@ -2412,3 +2412,15 @@ e848a7,127.0.0.1,GET,http://localhost:8000/login,1585518019,,200
 1fddb8,127.0.0.1,GET,http://localhost:8000/register,1585559960,,200
 b1e019,127.0.0.1,GET,http://localhost:8000/register,1585559979,33a24c,500
 33a24c,127.0.0.1,POST,http://localhost:8000/register,1585559979,,500
+7c9562,127.0.0.1,POST,http://localhost:8000/register,1585574370,,302
+5c95d8,127.0.0.1,GET,http://localhost:8000/login,1585574371,,200
+ba4c4a,127.0.0.1,GET,http://localhost:8000/register,1585574376,,200
+197ba4,127.0.0.1,POST,http://localhost:8000/register,1585574388,,200
+c87ab3,127.0.0.1,POST,http://localhost:8000/register,1585574406,,302
+8c684c,127.0.0.1,GET,http://localhost:8000/login,1585574406,,200
+1eed72,127.0.0.1,POST,http://localhost:8000/login,1585574419,,302
+c9f7b0,127.0.0.1,GET,http://localhost:8000/dashboard/,1585574420,,200
+6b0f34,127.0.0.1,GET,http://localhost:8000/dashboard/new,1585574439,,200
+abb031,127.0.0.1,GET,http://localhost:8000/logout,1585574444,,302
+b79ff8,127.0.0.1,GET,http://localhost:8000/,1585574444,,302
+969db3,127.0.0.1,GET,http://localhost:8000/login,1585574444,,200
