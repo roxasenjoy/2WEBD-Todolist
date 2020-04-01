@@ -36,6 +36,8 @@ class TasksController extends AbstractController
 
     /**
      * @Route("/new", name="tasks_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

@@ -17,6 +17,8 @@ class InvitationsController extends AbstractController
 {
     /**
      * @Route("/", name="invitations_index", methods={"GET"})
+     * @param InvitationsRepository $invitationsRepository
+     * @return Response
      */
     public function index(InvitationsRepository $invitationsRepository): Response
     {
@@ -62,6 +64,9 @@ class InvitationsController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="invitations_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Invitations $invitation
+     * @return Response
      */
     public function edit(Request $request, Invitations $invitation): Response
     {
@@ -82,6 +87,9 @@ class InvitationsController extends AbstractController
 
     /**
      * @Route("/{id}", name="invitations_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Invitations $invitation
+     * @return Response
      */
     public function delete(Request $request, Invitations $invitation): Response
     {
