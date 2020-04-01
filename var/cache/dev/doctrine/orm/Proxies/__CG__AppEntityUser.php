@@ -66,10 +66,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'friends', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tasks'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tasks', '' . "\0" . 'App\\Entity\\User' . "\0" . 'friends', '' . "\0" . 'App\\Entity\\User' . "\0" . 'invitations'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'friends', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tasks'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'lastname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tasks', '' . "\0" . 'App\\Entity\\User' . "\0" . 'friends', '' . "\0" . 'App\\Entity\\User' . "\0" . 'invitations'];
     }
 
     /**
@@ -176,6 +176,17 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -337,7 +348,7 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getFriends(): ?\App\Entity\Friends
+    public function getFriends(): ?\App\Entity\User
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFriends', []);
@@ -348,12 +359,12 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setFriends(?\App\Entity\Friends $friends): \App\Entity\User
+    public function addFriend(?\App\Entity\User $friend): \App\Entity\User
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFriends', [$friends]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addFriend', [$friend]);
 
-        return parent::setFriends($friends);
+        return parent::addFriend($friend);
     }
 
     /**
@@ -387,6 +398,39 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeTask', [$task]);
 
         return parent::removeTask($task);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getInvitations(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getInvitations', []);
+
+        return parent::getInvitations();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addInvitation(\App\Entity\Invitations $invitation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addInvitation', [$invitation]);
+
+        return parent::addInvitation($invitation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeInvitation(\App\Entity\Invitations $invitation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeInvitation', [$invitation]);
+
+        return parent::removeInvitation($invitation);
     }
 
 }

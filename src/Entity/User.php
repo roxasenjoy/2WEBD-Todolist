@@ -48,22 +48,30 @@ class User implements UserInterface
     private $lastname;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Friends", mappedBy="user", cascade={"persist", "remove"})
-     */
-    private $friends;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Tasks", mappedBy="user")
      */
     private $tasks;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\User",mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $friends;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Invitations", mappedBy="user")
+     */
+    private $invitations;
+
+    public function __toString(): ?string // Recupere les emails
+    {
+        return $this->email;
+    }
+
     public function __construct()
     {
         $this->tasks = new ArrayCollection();
+        $this->invitations = new ArrayCollection();
     }
-
-
-
 
     public function getId(): ?int
     {
@@ -167,20 +175,24 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getFriends(): ?Friends
+    public function getFriends(): ?User
     {
         return $this->friends;
     }
 
-    public function setFriends(?Friends $friends): self
+    public function addFriend(?User $friend): self
     {
-        $this->friends = $friends;
+        if (!in_array($friend, friends)) {
+            $this->friends[] = $friend;
+        }
 
         // set (or unset) the owning side of the relation if necessary
-        $newUser = null === $friends ? null : $this;
-        if ($friends->getUser() !== $newUser) {
-            $friends->setUser($newUser);
-        }
+        //$newUser = null === $friends ? null : $this;
+
+      //  if ($friends->getUser() !== $newUser) {
+      //      $friends->setUser($newUser);
+       // }
+
 
         return $this;
     }
@@ -210,6 +222,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($task->getUser() === $this) {
                 $task->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Invitations[]
+     */
+    public function getInvitations(): Collection
+    {
+        return $this->invitations;
+    }
+
+    public function addInvitation(Invitations $invitation): self
+    {
+        if (!$this->invitations->contains($invitation)) {
+            $this->invitations[] = $invitation;
+            $invitation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInvitation(Invitations $invitation): self
+    {
+        if ($this->invitations->contains($invitation)) {
+            $this->invitations->removeElement($invitation);
+            // set the owning side to null (unless already changed)
+            if ($invitation->getUser() === $this) {
+                $invitation->setUser(null);
             }
         }
 

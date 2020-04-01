@@ -7,6 +7,7 @@ use App\Entity\User;
 use App\Form\TasksType;
 use App\Repository\TasksTypeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,11 +20,18 @@ class TasksController extends AbstractController
     /**
      * @Route("/", name="tasks_index", methods={"GET"})
      */
-    public function index(TasksTypeRepository $tasksTypeRepository): Response
+    public function index(): Response
     {
-        return $this->render('pages/tasks/index.html.twig', [
-            'tasks' => $tasksTypeRepository->findAll(),
-        ]);
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) { // Si il n'est pas connecté
+            return $this->redirectToRoute('app_login'); // Retourne te connecter petit joueur
+        }
+        else{
+            $user = $this->getUser();
+
+            return $this->render('pages/tasks/index.html.twig', [
+                'tasks' => $user->getTasks(),
+            ]);
+        }
     }
 
     /**
@@ -95,6 +103,6 @@ class TasksController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('tasks_index');
+        return new JsonResponse(['data'], Response::HTTP_NO_CONTENT);
     }
 }

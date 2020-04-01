@@ -55,24 +55,31 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
 
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+        <!-- Bootstrap CSS -->
+        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
+
 
         <link rel=\"stylesheet\" href=\"/assets/css/layout.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
 
+        <!-- Icone -->
+
+        <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" ></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
 
         ";
-        // line 15
+        // line 22
         $this->displayBlock('css', $context, $blocks);
-        // line 16
+        // line 23
         echo "    </head>
 
     ";
-        // line 18
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 117
+        // line 115
         echo "</html>
 ";
         
@@ -102,7 +109,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 15
+    // line 22
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -121,7 +128,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 18
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -131,24 +138,24 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 19
+        // line 26
         echo "    <body>
         ";
-        // line 20
+        // line 27
         $this->displayBlock('header', $context, $blocks);
-        // line 49
+        // line 56
         echo "
         <!-- Défini le titre de la page -->
         <div class=\"m-auto page_name\">
             <h3 class=\"text-center\">";
-        // line 52
+        // line 59
         $this->displayBlock('page_name', $context, $blocks);
         echo "</h3>
         </div>
 
         <!-- Contenu de la page -->
         <div class=\"content\">";
-        // line 56
+        // line 63
         $this->displayBlock('content', $context, $blocks);
         echo " </div>
 
@@ -198,18 +205,9 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
              }
 
-
          </script>
-        <!-- Icone -->
         <script src=\"https://kit.fontawesome.com/128f69e9e2.js\"></script>
-        <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>
-        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\"></script>
-        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
-
     </body>
-
-
-
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -219,7 +217,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 20
+    // line 27
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -229,7 +227,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 21
+        // line 28
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
                 <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
@@ -243,7 +241,10 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+                            <a class=\"nav-link\" href=\"";
+        // line 41
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("invitations_index");
+        echo "\"><i class=\"far fa-address-book\"></i>Mes amis</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
@@ -253,7 +254,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 43
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
@@ -269,7 +270,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 52
+    // line 59
     public function block_page_name($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -287,7 +288,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 56
+    // line 63
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -312,7 +313,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  291 => 56,  273 => 52,  257 => 43,  233 => 21,  223 => 20,  152 => 56,  145 => 52,  140 => 49,  138 => 20,  135 => 19,  125 => 18,  106 => 15,  87 => 5,  76 => 117,  74 => 18,  70 => 16,  68 => 15,  55 => 5,  49 => 1,);
+        return array (  292 => 63,  274 => 59,  258 => 50,  246 => 41,  231 => 28,  221 => 27,  159 => 63,  152 => 59,  147 => 56,  145 => 27,  142 => 26,  132 => 25,  113 => 22,  94 => 5,  83 => 115,  81 => 25,  77 => 23,  75 => 22,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -323,13 +324,20 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <meta charset=\"UTF-8\">
         <title>{% block title %}TodoList - Dashboard  {% endblock %}</title>
 
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+        <!-- Bootstrap CSS -->
+        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
+
 
         <link rel=\"stylesheet\" href=\"/assets/css/layout.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
 
+        <!-- Icone -->
+
+        <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" ></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
 
         {% block css %}   {% endblock %}
     </head>
@@ -350,7 +358,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+                            <a class=\"nav-link\" href=\"{{ path(\"invitations_index\") }}\"><i class=\"far fa-address-book\"></i>Mes amis</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
@@ -420,18 +428,9 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
              }
 
-
          </script>
-        <!-- Icone -->
         <script src=\"https://kit.fontawesome.com/128f69e9e2.js\"></script>
-        <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>
-        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\"></script>
-        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
-
     </body>
-
-
-
     {% endblock %}
 </html>
 ", "/layouts/layout.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\layouts\\layout.html.twig");

@@ -1,8 +1,5 @@
 {% extends "/layouts/layout.html.twig" %}
 
-{% block css %}   <!--  <link rel="stylesheet" href="/assets/css/white/dashboard.css" id="dashboard"> Dashboard --> {% endblock %}
-
-
 {% block content %}
     <!---------------
         DASHBOARD
@@ -45,6 +42,23 @@
         <a href="{{ path('tasks_new') }}" class="add_task" role="button" aria-pressed="true"><i class="fas fa-plus"></i></a>
     </div>
 
+    <script>
+        $(".delete").click(function(event){
+            event.preventDefault()
+            let token = event.target.form._token.value; // Cheaté 1.0
+            $.ajax({
+                method: "DELETE", //Delete
+                data: {
+                    "_token": token,
+                },
+                url: event.target.form.action, // Cheaté 2.0
+                success: function(result){
+                    event.target.closest(".task").remove(); //delete l'affichage
+                }
+            })
+        });
+
+    </script>
 {% endblock %}
 
 

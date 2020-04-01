@@ -38,7 +38,7 @@ class srcApp_KernelDevDebugContainer extends Container
             'kernel' => true,
         ];
         $this->methodMap = [
-            'App\\Controller\\FriendsController' => 'getFriendsControllerService',
+            'App\\Controller\\InvitationsController' => 'getFriendsControllerService',
             'App\\Controller\\HomeController' => 'getHomeControllerService',
             'App\\Controller\\RegistrationController' => 'getRegistrationControllerService',
             'App\\Controller\\SecurityController' => 'getSecurityControllerService',
@@ -424,7 +424,7 @@ class srcApp_KernelDevDebugContainer extends Container
     /**
      * Gets the public 'App\Controller\FriendsController' shared autowired service.
      *
-     * @return \App\Controller\FriendsController
+     * @return \App\Controller\InvitationsController
      */
     protected function getFriendsControllerService()
     {
@@ -432,9 +432,9 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\framework-bundle\\Controller\\AbstractController.php';
         include_once \dirname(__DIR__, 4).'\\src\\Controller\\FriendsController.php';
 
-        $this->services['App\\Controller\\FriendsController'] = $instance = new \App\Controller\FriendsController();
+        $this->services['App\\Controller\\InvitationsController'] = $instance = new \App\Controller\InvitationsController();
 
-        $instance->setContainer(($this->privates['.service_locator.vdmMuyE'] ?? $this->get_ServiceLocator_VdmMuyEService())->withContext('App\\Controller\\FriendsController', $this));
+        $instance->setContainer(($this->privates['.service_locator.vdmMuyE'] ?? $this->get_ServiceLocator_VdmMuyEService())->withContext('App\\Controller\\InvitationsController', $this));
 
         return $instance;
     }
