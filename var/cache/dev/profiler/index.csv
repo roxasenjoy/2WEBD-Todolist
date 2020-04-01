@@ -3144,3 +3144,5 @@ b7e013,127.0.0.1,GET,http://localhost:8000/invitations/,1585774964,,200
 d7f477,127.0.0.1,GET,http://localhost:8000/invitations/,1585774996,,200
 f1dd3a,127.0.0.1,DELETE,http://localhost:8000/invitations/4,1585774999,,302
 f84422,127.0.0.1,GET,http://localhost:8000/invitations/,1585775000,,200
+f94756,127.0.0.1,GET,http://localhost:8000/dashboard/,1585776955,6b4768,500
+6b4768,127.0.0.1,GET,http://localhost:8000/dashboard/,1585776955,,500
