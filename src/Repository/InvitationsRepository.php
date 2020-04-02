@@ -2,9 +2,12 @@
 
 namespace App\Repository;
 
+use App\Entity\FriendsSearch;
 use App\Entity\Invitations;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Invitations|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +21,35 @@ class InvitationsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Invitations::class);
     }
+
+
+    /**
+     * @param FriendsSearch $search
+     * @return Query
+     */
+    public function findAllVisibleQuery(FriendsSearch $search): Query
+    {
+        $query = $this->findVisibleQuery();
+
+        if ($search->getFriends()){
+           
+            $query = $query
+                ->where('u.id = :friends')
+                ->setParameter('friends', $search->getFriends());
+        }
+
+        return $query->getQuery();
+    }
+
+    /**
+     * @return Invitations[]
+     */
+    public function findVisibleQuery(): QueryBuilder
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.id = false');
+    }
+
 
     // /**
     //  * @return Invitations[] Returns an array of Invitations objects

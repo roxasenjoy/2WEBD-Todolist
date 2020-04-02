@@ -23,7 +23,7 @@ class InvitationsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('accepted_invitation')
+          //  ->add('accepted_invitation')
             ->add('user', EntityType::class, [
                 'class' => User::class,
                 'query_builder' => function (EntityRepository $er) {

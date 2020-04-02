@@ -1,4 +1,13 @@
 
+    .delete_friend{
+        background-color:#1D3557;
+        color:white;
+    }
+
+    .delete_friend:hover{
+        color: white;
+    }
+
 
     /* Bouton - Ajouter un utilisateur */
         .add_task{
@@ -16,3 +25,5 @@
             padding: 10px 10px;
             color:#F1FAEE;
         }
+
+        Yes, je fais le design en attendant

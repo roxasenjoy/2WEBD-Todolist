@@ -15,8 +15,8 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'login', '_controller' => 'App\\Controller\\HomeController::login'], null, null, null, false, false, null]],
         '/registerTest' => [[['_route' => 'register', '_controller' => 'App\\Controller\\HomeController::register'], null, null, null, false, false, null]],
-        '/invitations' => [[['_route' => 'invitations_index', '_controller' => 'App\\Controller\\InvitationsController::index'], null, ['GET' => 0], null, true, false, null]],
-        '/invitations/new' => [[['_route' => 'invitations_new', '_controller' => 'App\\Controller\\InvitationsController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/amis' => [[['_route' => 'invitations_index', '_controller' => 'App\\Controller\\InvitationsController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/amis/new' => [[['_route' => 'invitations_new', '_controller' => 'App\\Controller\\InvitationsController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -41,14 +41,14 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/invitations/([^/]++)(?'
-                    .'|(*:193)'
-                    .'|/edit(*:206)'
-                    .'|(*:214)'
+                .'|/amis/([^/]++)(?'
+                    .'|(*:186)'
+                    .'|/edit(*:199)'
+                    .'|(*:207)'
                 .')'
                 .'|/dashboard/([^/]++)(?'
-                    .'|/edit(*:250)'
-                    .'|(*:258)'
+                    .'|/edit(*:243)'
+                    .'|(*:251)'
                 .')'
             .')/?$}sD',
     ],
@@ -60,11 +60,11 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        193 => [[['_route' => 'invitations_show', '_controller' => 'App\\Controller\\InvitationsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        206 => [[['_route' => 'invitations_edit', '_controller' => 'App\\Controller\\InvitationsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        214 => [[['_route' => 'invitations_delete', '_controller' => 'App\\Controller\\InvitationsController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        250 => [[['_route' => 'tasks_edit', '_controller' => 'App\\Controller\\TasksController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        258 => [
+        186 => [[['_route' => 'invitations_show', '_controller' => 'App\\Controller\\InvitationsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        199 => [[['_route' => 'invitations_edit', '_controller' => 'App\\Controller\\InvitationsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        207 => [[['_route' => 'invitations_delete', '_controller' => 'App\\Controller\\InvitationsController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        243 => [[['_route' => 'tasks_edit', '_controller' => 'App\\Controller\\TasksController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        251 => [
             [['_route' => 'tasks_delete', '_controller' => 'App\\Controller\\TasksController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

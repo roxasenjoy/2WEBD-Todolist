@@ -7,34 +7,66 @@ use App\Entity\Invitations;
 use App\Form\FriendsSearchType;
 use App\Form\InvitationsType;
 use App\Repository\InvitationsRepository;
-use Doctrine\ORM\EntityRepository;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/invitations")
+ * @Route("/amis")
  */
 class InvitationsController extends AbstractController
 {
     /**
+     * @var InvitationsRepository
+     */
+    private $repository;
+
+    /**
+     * @var ObjectManager"
+     */
+    private $em;
+
+
+    /**
+     * InvitationsController constructor.
+     * @param InvitationsRepository $repository
+     * @param EntityManagerInterface $em
+     */
+    public function __construct(InvitationsRepository $repository, EntityManagerInterface $em)
+    {
+
+        $this->repository = $repository;
+        $this->em =$em;
+
+    }
+
+
+    /**
      * @Route("/", name="invitations_index", methods={"GET"})
      * @param InvitationsRepository $invitationsRepository
      * @param Request $request
+     * @param PaginatorInterface $paginator
      * @return Response
      */
-    public function index(InvitationsRepository $invitationsRepository, Request $request): Response
+    public function index(InvitationsRepository $invitationsRepository, Request $request, PaginatorInterface $paginator): Response
     {
 
         $search = new FriendsSearch();
         $form = $this->createForm(FriendsSearchType::class, $search);
         $form->handleRequest($request);
 
-
+        $friends = $paginator->paginate(
+            $this->repository->findAllVisibleQuery($search),
+            $request->query->getInt('page', 1), 12
+            );
 
         return $this->render('pages/invitations/index.html.twig', [
             'invitations'   => $invitationsRepository->findAll(),
+            'friends'       => $friends,
             'form'          => $form->createView(),
         ]);
     }

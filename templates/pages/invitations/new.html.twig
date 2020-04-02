@@ -1,9 +1,24 @@
 {% extends "/layouts/layout.html.twig" %}
 
+{% block page_name %} Ajouter des amis{% endblock %}
+
 {% block content %}
-    <h1>Create new Invitations</h1>
 
-    {{ include('pages/invitations/_form.html.twig') }}
 
-    <a href="{{ path('invitations_index') }}">back to list</a>
+        <div class="task container">
+            <div class="row row-cols-3 m-auto">
+
+                <!-- Ami à ajouter -->
+                <div class="task_padding col-8 p-2" id="friend">
+                    {{ form_start(form) }}
+                        {{ form_widget(form.user) }}
+                       {{ form_end(form) }}
+                </div>
+
+                <!-- Options de la tâche -->
+                <div class="option_padding col-4 m-auto">
+                    <button class="btn">{{ button_label|default('Ajouter') }}</button>
+                </div>
+            </div>
+        </div>
 {% endblock %}

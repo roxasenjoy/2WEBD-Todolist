@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /pages/login.html.twig */
+/* pages/login.html.twig */
 class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f9610781069970 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f96107810
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/pages/login.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "pages/login.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/pages/login.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "pages/login.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -82,7 +82,7 @@ class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f96107810
     <footer>
         <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"";
         // line 41
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">Créer mon compte</a>
     </footer>
 
@@ -101,7 +101,7 @@ class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f96107810
 
     public function getTemplateName()
     {
-        return "/pages/login.html.twig";
+        return "pages/login.html.twig";
     }
 
     public function isTraitable()
@@ -156,13 +156,13 @@ class __TwigTemplate_7019a00a1ea1347c859e953cb4bd8e34e8387ee405233aed84f96107810
 
     <!-- Création d'un compte -->
     <footer>
-        <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"{{ path('register') }}\">Créer mon compte</a>
+        <a id=\"create_account\" class=\"fixed-bottom m-auto col-4 col-12  pb-1\" href=\"{{ path('app_register') }}\">Créer mon compte</a>
     </footer>
 
     <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\"></script>
     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>
 </body>
-</html>", "/pages/login.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\pages\\login.html.twig");
+</html>", "pages/login.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\pages\\login.html.twig");
     }
 }
