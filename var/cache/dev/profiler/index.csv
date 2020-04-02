@@ -3490,3 +3490,15 @@ e22839,127.0.0.1,GET,http://localhost:8000/amis/,1585840985,,200
 aebdb6,127.0.0.1,GET,http://localhost:8000/amis/new,1585840989,,200
 4e6053,127.0.0.1,GET,http://localhost:8000/amis/new,1585841470,,200
 b42953,127.0.0.1,GET,http://localhost:8000/amis/new,1585841473,,200
+802554,127.0.0.1,GET,http://localhost:8000/,1585850697,,302
+461345,127.0.0.1,GET,http://localhost:8000/login,1585850698,,200
+31dbc1,127.0.0.1,POST,http://localhost:8000/login,1585850708,,302
+f54034,127.0.0.1,GET,http://localhost:8000/dashboard/,1585850709,,302
+1c16d1,127.0.0.1,GET,http://localhost:8000/login,1585850710,,200
+376730,127.0.0.1,GET,http://localhost:8000/register,1585850718,,200
+889de2,127.0.0.1,POST,http://localhost:8000/register,1585850736,,302
+57d39a,127.0.0.1,GET,http://localhost:8000/login,1585850737,,200
+c906d1,127.0.0.1,POST,http://localhost:8000/login,1585850740,,302
+ed378b,127.0.0.1,GET,http://localhost:8000/dashboard/,1585850741,,200
+e99350,127.0.0.1,GET,http://localhost:8000/dashboard/new,1585850744,,200
+c0f013,127.0.0.1,GET,http://localhost:8000/amis/,1585852622,,200

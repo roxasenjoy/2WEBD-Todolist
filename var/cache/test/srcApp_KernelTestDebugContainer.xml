@@ -20,7 +20,6 @@
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
-      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="LiipTestFixturesBundle">Liip\TestFixturesBundle\LiipTestFixturesBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
@@ -67,10 +66,6 @@
       <parameter key="DoctrineFixturesBundle" type="collection">
         <parameter key="path">E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\doctrine\doctrine-fixtures-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
-      </parameter>
-      <parameter key="KnpPaginatorBundle" type="collection">
-        <parameter key="path">E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle</parameter>
-        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
       <parameter key="LiipTestFixturesBundle" type="collection">
         <parameter key="path">E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\liip\test-fixtures-bundle\src</parameter>
@@ -225,10 +220,6 @@
       </parameter>
     </parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
-    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
-    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
-    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
-    <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="liip_test_fixtures.cache_db.sqlite">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
@@ -325,8 +316,6 @@
     <service id="App\Controller\InvitationsController" class="App\Controller\InvitationsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="App\Repository\InvitationsRepository"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\InvitationsController"/>
       </call>
@@ -1085,7 +1074,6 @@
         <argument key="Doctrine\DBAL\Driver\Connection" type="service" id="doctrine.dbal.default_connection" on-invalid="ignore_uninitialized"/>
         <argument key="Doctrine\ORM\EntityManagerInterface" type="service" id="doctrine.orm.default_entity_manager" on-invalid="ignore_uninitialized"/>
         <argument key="Doctrine\Persistence\ManagerRegistry" type="service" id="doctrine" on-invalid="ignore_uninitialized"/>
-        <argument key="Knp\Component\Pager\PaginatorInterface" type="service" id="knp_paginator" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Cache\CacheItemPoolInterface" type="service" id="cache.app" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Container\ContainerInterface" type="service" id="service_container" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Container\ContainerInterface $parameterBag" type="service" id="parameter_bag" on-invalid="ignore_uninitialized"/>
@@ -1185,7 +1173,7 @@
         <argument key="annotations.reader" type="service" id="annotations.reader" on-invalid="ignore_uninitialized"/>
         <argument key="argument_metadata_factory" type="service" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver" type="service" id="debug.argument_resolver" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service" id=".service_locator.531YlXk" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service" id=".service_locator.Y9xfZU5" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.default" type="service" id="debug.argument_resolver.default" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.not_tagged_controller" type="service" id="debug.argument_resolver.not_tagged_controller" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.request" type="service" id="debug.argument_resolver.request" on-invalid="ignore_uninitialized"/>
@@ -1415,12 +1403,6 @@
         <argument key="framework_extra_bundle.event.is_granted" type="service" id="framework_extra_bundle.event.is_granted" on-invalid="ignore_uninitialized"/>
         <argument key="http_client" type="service" id=".debug.http_client" on-invalid="ignore_uninitialized"/>
         <argument key="identity_translator" type="service" id="identity_translator" on-invalid="ignore_uninitialized"/>
-        <argument key="knp_paginator.helper.processor" type="service" id="knp_paginator.helper.processor" on-invalid="ignore_uninitialized"/>
-        <argument key="knp_paginator.subscriber.filtration" type="service" id="knp_paginator.subscriber.filtration" on-invalid="ignore_uninitialized"/>
-        <argument key="knp_paginator.subscriber.paginate" type="service" id="knp_paginator.subscriber.paginate" on-invalid="ignore_uninitialized"/>
-        <argument key="knp_paginator.subscriber.sliding_pagination" type="service" id="knp_paginator.subscriber.sliding_pagination" on-invalid="ignore_uninitialized"/>
-        <argument key="knp_paginator.subscriber.sortable" type="service" id="knp_paginator.subscriber.sortable" on-invalid="ignore_uninitialized"/>
-        <argument key="knp_paginator.twig.extension.pagination" type="service" id="knp_paginator.twig.extension.pagination" on-invalid="ignore_uninitialized"/>
         <argument key="liip_test_fixtures.services_database_tools.mongodb_database_tool" type="service" id="liip_test_fixtures.services_database_tools.mongodb_database_tool" on-invalid="ignore_uninitialized"/>
         <argument key="liip_test_fixtures.services_database_tools.orm_database_tool" type="service" id="liip_test_fixtures.services_database_tools.orm_database_tool" on-invalid="ignore_uninitialized"/>
         <argument key="liip_test_fixtures.services_database_tools.orm_sqlite_database_tool" type="service" id="liip_test_fixtures.services_database_tools.orm_sqlite_database_tool" on-invalid="ignore_uninitialized"/>
@@ -1726,8 +1708,6 @@
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.mock_file"/>
-      <argument type="service" id="session.attribute_bag"/>
-      <argument type="service" id="session.flash_bag"/>
     </service>
     <service id="session.storage.metadata_bag" class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag" public="false">
       <argument>_sf2_meta</argument>
@@ -1742,8 +1722,12 @@
       <argument>null</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
-    <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
-    <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
+    <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false">
+      <factory service="session" method="getFlashBag"/>
+    </service>
+    <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false">
+      <factory service="session" method="getAttributeBag"/>
+    </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
       <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\var\cache\test/sessions</argument>
       <argument>MOCKSESSID</argument>
@@ -2098,7 +2082,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -2114,7 +2097,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="ca" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
@@ -2125,7 +2107,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -2134,13 +2115,11 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -2151,13 +2130,11 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -2167,13 +2144,11 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
@@ -2183,7 +2158,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -2204,7 +2178,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -2214,19 +2187,16 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
@@ -2237,7 +2207,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -2257,7 +2226,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -2268,13 +2236,11 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -2284,19 +2250,16 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -2325,7 +2288,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -2345,7 +2307,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
@@ -2363,18 +2324,11 @@
           <argument key="pt_PT" type="collection">
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations\security.pt_PT.xlf</argument>
           </argument>
-          <argument key="ky" type="collection">
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
-          </argument>
-          <argument key="sw" type="collection">
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
-          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\framework-bundle/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/FrameworkBundle/translations</argument>
@@ -2398,7 +2352,6 @@
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/DebugBundle/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/DoctrineFixturesBundle/translations</argument>
-          <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/KnpPaginatorBundle/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\liip\test-fixtures-bundle\src/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/LiipTestFixturesBundle/translations</argument>
           <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/translations</argument>
@@ -2408,7 +2361,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\validator/Resources/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\form/Resources/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\security-core/Resources/translations</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\framework-bundle/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/FrameworkBundle/translations</argument>
@@ -2432,7 +2384,6 @@
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/DebugBundle/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/DoctrineFixturesBundle/translations</argument>
-            <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/KnpPaginatorBundle/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\liip\test-fixtures-bundle\src/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/LiipTestFixturesBundle/translations</argument>
             <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\src/Resources/translations</argument>
@@ -2878,14 +2829,6 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
-        <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
-          <argument>onKernelRequest</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service" id="response_listener"/>
@@ -3276,46 +3219,6 @@
           <argument>configure</argument>
         </argument>
         <argument>1024</argument>
-      </call>
-      <call method="addListener">
-        <argument>knp_pager.before</argument>
-        <argument type="collection">
-          <argument type="service" id="knp_paginator.subscriber.paginate"/>
-          <argument>before</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>knp_pager.pagination</argument>
-        <argument type="collection">
-          <argument type="service" id="knp_paginator.subscriber.paginate"/>
-          <argument>pagination</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>knp_pager.before</argument>
-        <argument type="collection">
-          <argument type="service" id="knp_paginator.subscriber.sortable"/>
-          <argument>before</argument>
-        </argument>
-        <argument>1</argument>
-      </call>
-      <call method="addListener">
-        <argument>knp_pager.before</argument>
-        <argument type="collection">
-          <argument type="service" id="knp_paginator.subscriber.filtration"/>
-          <argument>before</argument>
-        </argument>
-        <argument>1</argument>
-      </call>
-      <call method="addListener">
-        <argument>knp_pager.pagination</argument>
-        <argument type="collection">
-          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
-          <argument>pagination</argument>
-        </argument>
-        <argument>1</argument>
       </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver" public="false">
@@ -3753,9 +3656,6 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
-      <call method="addExtension">
-        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
-      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3857,14 +3757,6 @@
       <call method="addPath">
         <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
-      </call>
-      <call method="addPath">
-        <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/templates</argument>
-        <argument>KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist\vendor\knplabs\knp-paginator-bundle/templates</argument>
-        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>E:\12 - SUPINFO\2 - A.Sc.2\3 - Projet\PHPD\todolist/templates</argument>
@@ -5444,48 +5336,6 @@
         </argument>
       </call>
     </service>
-    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
-      <argument type="service" id="debug.event_dispatcher"/>
-      <argument type="service" id="request_stack"/>
-      <call method="setDefaultPaginatorOptions">
-        <argument type="collection">
-          <argument key="pageParameterName">page</argument>
-          <argument key="sortFieldParameterName">sort</argument>
-          <argument key="sortDirectionParameterName">direction</argument>
-          <argument key="filterFieldParameterName">filterField</argument>
-          <argument key="filterValueParameterName">filterValue</argument>
-          <argument key="distinct">true</argument>
-        </argument>
-      </call>
-    </service>
-    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
-      <tag name="knp_paginator.subscriber"/>
-    </service>
-    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
-      <tag name="knp_paginator.subscriber"/>
-    </service>
-    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
-      <tag name="knp_paginator.subscriber"/>
-    </service>
-    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
-      <tag name="knp_paginator.subscriber"/>
-      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
-      <tag name="container.hot_path"/>
-      <argument type="collection">
-        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
-        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
-        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
-        <argument key="defaultPageRange">5</argument>
-      </argument>
-    </service>
-    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
-      <argument type="service" id="router.default"/>
-      <argument type="service" id="translator.data_collector"/>
-    </service>
-    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
-      <tag name="twig.extension"/>
-      <argument type="service" id="knp_paginator.helper.processor"/>
-    </service>
     <service id="liip_test_fixtures.services.fixtures_loader_factory" class="Liip\TestFixturesBundle\Services\FixturesLoaderFactory" public="true">
       <argument type="service" id="service_container"/>
       <argument type="service" id="doctrine.fixtures.loader" on-invalid="null"/>
@@ -5591,11 +5441,10 @@
         <argument key="url" type="service" id="container.env_var_processor"/>
       </argument>
     </service>
-    <service id=".service_locator.qEYpLtH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.2XWilrK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="invitationsRepository" type="service" id="App\Repository\InvitationsRepository"/>
-        <argument key="paginator" type="service" id="knp_paginator"/>
       </argument>
     </service>
     <service id=".service_locator.xN.bma6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5622,12 +5471,12 @@
         <argument key="task" type="service" id=".errored..service_locator.9KurNWJ.App\Entity\Tasks"/>
       </argument>
     </service>
-    <service id=".service_locator.531YlXk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Y9xfZU5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\InvitationsController::delete" type="service" id=".service_locator.xN.bma6"/>
         <argument key="App\Controller\InvitationsController::edit" type="service" id=".service_locator.xN.bma6"/>
-        <argument key="App\Controller\InvitationsController::index" type="service" id=".service_locator.qEYpLtH"/>
+        <argument key="App\Controller\InvitationsController::index" type="service" id=".service_locator.2XWilrK"/>
         <argument key="App\Controller\InvitationsController::show" type="service" id=".service_locator.xN.bma6"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
@@ -5635,7 +5484,7 @@
         <argument key="App\Controller\TasksController::edit" type="service" id=".service_locator.9KurNWJ"/>
         <argument key="App\Controller\InvitationsController:delete" type="service" id=".service_locator.xN.bma6"/>
         <argument key="App\Controller\InvitationsController:edit" type="service" id=".service_locator.xN.bma6"/>
-        <argument key="App\Controller\InvitationsController:index" type="service" id=".service_locator.qEYpLtH"/>
+        <argument key="App\Controller\InvitationsController:index" type="service" id=".service_locator.2XWilrK"/>
         <argument key="App\Controller\InvitationsController:show" type="service" id=".service_locator.xN.bma6"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
@@ -6076,12 +5925,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.531YlXk"/>
+      <argument type="service" id=".service_locator.Y9xfZU5"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.531YlXk"/>
+      <argument type="service" id=".service_locator.Y9xfZU5"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6420,10 +6269,9 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.531YlXk"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Y9xfZU5"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

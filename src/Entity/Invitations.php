@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Invitations
 {
+
+    /* Cette classe va permettre de récuperer l'utilisateur qui va recevoir la demande afin de lui envoyer un mail avec maildev/SwiftMailer
+    avec deux boutons pour signaler si la réponse est positive ou non */
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

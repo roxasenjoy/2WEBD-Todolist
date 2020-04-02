@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /layouts/layout.html.twig */
+/* layouts/layout.html.twig */
 class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694e6c84 extends Template
 {
     private $source;
@@ -40,10 +40,10 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/layouts/layout.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "layouts/layout.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/layouts/layout.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "layouts/layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -245,12 +245,15 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+                            <a class=\"nav-link\" href=\"";
+        // line 42
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("invitations_index");
+        echo "\"><i class=\"far fa-address-book\"></i>Mes amis</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
         // line 45
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("invitations_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("invitations_new");
         echo "\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
                         </li>
                         <li class=\"nav-item\">
@@ -312,12 +315,12 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getTemplateName()
     {
-        return "/layouts/layout.html.twig";
+        return "layouts/layout.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  296 => 64,  278 => 60,  262 => 51,  253 => 45,  236 => 31,  232 => 29,  222 => 28,  160 => 64,  153 => 60,  148 => 57,  146 => 28,  143 => 27,  133 => 26,  114 => 23,  95 => 5,  84 => 116,  82 => 26,  78 => 24,  76 => 23,  55 => 5,  49 => 1,);
+        return array (  299 => 64,  281 => 60,  265 => 51,  256 => 45,  250 => 42,  236 => 31,  232 => 29,  222 => 28,  160 => 64,  153 => 60,  148 => 57,  146 => 28,  143 => 27,  133 => 26,  114 => 23,  95 => 5,  84 => 116,  82 => 26,  78 => 24,  76 => 23,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -363,10 +366,10 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+                            <a class=\"nav-link\" href=\"{{ path(\"invitations_index\") }}\"><i class=\"far fa-address-book\"></i>Mes amis</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path(\"invitations_index\") }}\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
+                            <a class=\"nav-link\" href=\"{{ path(\"invitations_new\") }}\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
@@ -438,6 +441,6 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
     </body>
     {% endblock %}
 </html>
-", "/layouts/layout.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\layouts\\layout.html.twig");
+", "layouts/layout.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\layouts\\layout.html.twig");
     }
 }
