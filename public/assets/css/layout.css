@@ -33,3 +33,8 @@
         color: #F1FAEE;
     }
 
+    /* Theme */
+    #theme:hover{
+        cursor:pointer;
+    }
+

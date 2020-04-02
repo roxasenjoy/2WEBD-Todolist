@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\FriendsSearch;
 use App\Entity\Invitations;
+use App\Form\FriendsSearchType;
 use App\Form\InvitationsType;
 use App\Repository\InvitationsRepository;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,17 +21,28 @@ class InvitationsController extends AbstractController
     /**
      * @Route("/", name="invitations_index", methods={"GET"})
      * @param InvitationsRepository $invitationsRepository
+     * @param Request $request
      * @return Response
      */
-    public function index(InvitationsRepository $invitationsRepository): Response
+    public function index(InvitationsRepository $invitationsRepository, Request $request): Response
     {
+
+        $search = new FriendsSearch();
+        $form = $this->createForm(FriendsSearchType::class, $search);
+        $form->handleRequest($request);
+
+
+
         return $this->render('pages/invitations/index.html.twig', [
-            'invitations' => $invitationsRepository->findAll(),
+            'invitations'   => $invitationsRepository->findAll(),
+            'form'          => $form->createView(),
         ]);
     }
 
     /**
      * @Route("/new", name="invitations_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

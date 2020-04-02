@@ -25,6 +25,7 @@ class __TwigTemplate_6b373dcaea1b8bcc0b704c859561aaa6e2ccf26ece2e51c75d6d6fd3b71
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'page_name' => [$this, 'block_page_name'],
             'content' => [$this, 'block_content'],
         ];
     }
@@ -55,6 +56,25 @@ class __TwigTemplate_6b373dcaea1b8bcc0b704c859561aaa6e2ccf26ece2e51c75d6d6fd3b71
     }
 
     // line 3
+    public function block_page_name($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "page_name"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "page_name"));
+
+        echo " Ajouter des amis ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 5
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,83 +84,71 @@ class __TwigTemplate_6b373dcaea1b8bcc0b704c859561aaa6e2ccf26ece2e51c75d6d6fd3b71
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 4
-        echo "    <h1>Invitations index</h1>
+        // line 6
+        echo "
+    <!-- Barre de recherche pour trouver un ami -->
+    <div class=\"jumbotron\">
+        <div class=\"container\">
+            ";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_start');
+        echo "
+                ";
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'row');
+        echo "
+                <button type=\"submit\" class=\"btn btn-primary\">Rechercher</button>
+            ";
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_end');
+        echo "
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Accepted_invitation</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 15
+
+
+
+        </div>
+    </div>
+
+
+    ";
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["invitations"]) || array_key_exists("invitations", $context) ? $context["invitations"] : (function () { throw new RuntimeError('Variable "invitations" does not exist.', 15, $this->source); })()));
-        $context['_iterated'] = false;
-        $context['loop'] = [
-          'parent' => $context['_parent'],
-          'index0' => 0,
-          'index'  => 1,
-          'first'  => true,
-        ];
-        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-            $length = count($context['_seq']);
-            $context['loop']['revindex0'] = $length - 1;
-            $context['loop']['revindex'] = $length;
-            $context['loop']['length'] = $length;
-            $context['loop']['last'] = 1 === $length;
-        }
+        $context['_seq'] = twig_ensure_traversable((isset($context["invitations"]) || array_key_exists("invitations", $context) ? $context["invitations"] : (function () { throw new RuntimeError('Variable "invitations" does not exist.', 22, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["invitation"]) {
-            // line 16
-            echo "            <tr>
-                <td>";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["invitation"], "id", [], "any", false, false, false, 17), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 18
-            echo ((twig_get_attribute($this->env, $this->source, $context["invitation"], "acceptedInvitation", [], "any", false, false, false, 18)) ? ("Yes") : ("No"));
-            echo "</td>
-                <td>
-                    ";
-            // line 20
-            echo twig_include($this->env, $context, "pages/invitations/_delete_form.html.twig");
-            echo "
-                </td>
-            </tr>
-        ";
-            $context['_iterated'] = true;
-            ++$context['loop']['index0'];
-            ++$context['loop']['index'];
-            $context['loop']['first'] = false;
-            if (isset($context['loop']['length'])) {
-                --$context['loop']['revindex0'];
-                --$context['loop']['revindex'];
-                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-            }
-        }
-        if (!$context['_iterated']) {
-            // line 24
-            echo "            <tr>
-                <td colspan=\"3\">No records found</td>
-            </tr>
-        ";
+            // line 23
+            echo "        <div class=\"task container\">
+            <div class=\"row row-cols-3 m-auto\">
+
+                <!-- Ami à ajouter -->
+                <div class=\"task_padding col-10 p-2\" id=\"friend\">
+                    <div class=\"friend_name\">";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["invitation"], "user", [], "any", false, false, false, 28), "firstname", [], "any", false, false, false, 28), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["invitation"], "user", [], "any", false, false, false, 28), "lastname", [], "any", false, false, false, 28), "html", null, true);
+            echo "</div>
+                </div>
+
+                <!-- Options de la tâche -->
+                <div class=\"option_padding col-2 m-auto\">
+                    <a class=\"add\" href=\"#\">
+                        <div>
+                            <a href=\"";
+            // line 35
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tasks_new");
+            echo "\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['invitation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
-        echo "        </tbody>
-    </table>
-
-    <a href=\"";
-        // line 31
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("invitations_new");
-        echo "\">Create new</a>
+        // line 42
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -162,43 +170,53 @@ class __TwigTemplate_6b373dcaea1b8bcc0b704c859561aaa6e2ccf26ece2e51c75d6d6fd3b71
 
     public function getDebugInfo()
     {
-        return array (  142 => 31,  137 => 28,  128 => 24,  111 => 20,  106 => 18,  102 => 17,  99 => 16,  81 => 15,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  151 => 42,  138 => 35,  126 => 28,  119 => 23,  115 => 22,  103 => 13,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"/layouts/layout.html.twig\" %}
 
+{% block page_name %} Ajouter des amis {% endblock %}
+
 {% block content %}
-    <h1>Invitations index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Accepted_invitation</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for invitation in invitations %}
-            <tr>
-                <td>{{ invitation.id }}</td>
-                <td>{{ invitation.acceptedInvitation ? 'Yes' : 'No' }}</td>
-                <td>
-                    {{ include('pages/invitations/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"3\">No records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!-- Barre de recherche pour trouver un ami -->
+    <div class=\"jumbotron\">
+        <div class=\"container\">
+            {{ form_start(form) }}
+                {{ form_row(form) }}
+                <button type=\"submit\" class=\"btn btn-primary\">Rechercher</button>
+            {{ form_end(form) }}
 
-    <a href=\"{{ path('invitations_new') }}\">Create new</a>
-{% endblock %}
-", "pages/invitations/index.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\pages\\invitations\\index.html.twig");
+
+
+
+        </div>
+    </div>
+
+
+    {% for invitation in invitations %}
+        <div class=\"task container\">
+            <div class=\"row row-cols-3 m-auto\">
+
+                <!-- Ami à ajouter -->
+                <div class=\"task_padding col-10 p-2\" id=\"friend\">
+                    <div class=\"friend_name\">{{ invitation.user.firstname }} {{ invitation.user.lastname }}</div>
+                </div>
+
+                <!-- Options de la tâche -->
+                <div class=\"option_padding col-2 m-auto\">
+                    <a class=\"add\" href=\"#\">
+                        <div>
+                            <a href=\"{{ path('tasks_new') }}\" class=\"add_task\" role=\"button\" aria-pressed=\"true\"><i class=\"fas fa-plus\"></i></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}", "pages/invitations/index.html.twig", "E:\\12 - SUPINFO\\2 - A.Sc.2\\3 - Projet\\PHPD\\todolist\\templates\\pages\\invitations\\index.html.twig");
     }
 }

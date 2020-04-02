@@ -1,32 +1,43 @@
 {% extends "/layouts/layout.html.twig" %}
 
+{% block page_name %} Ajouter des amis {% endblock %}
+
 {% block content %}
-    <h1>Invitations index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Accepted_invitation</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for invitation in invitations %}
-            <tr>
-                <td>{{ invitation.id }}</td>
-                <td>{{ invitation.acceptedInvitation ? 'Yes' : 'No' }}</td>
-                <td>
-                    {{ include('pages/invitations/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">No records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!-- Barre de recherche pour trouver un ami -->
+    <div class="jumbotron">
+        <div class="container">
+            {{ form_start(form) }}
+                {{ form_row(form) }}
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+            {{ form_end(form) }}
 
-    <a href="{{ path('invitations_new') }}">Create new</a>
+
+
+
+        </div>
+    </div>
+
+
+    {% for invitation in invitations %}
+        <div class="task container">
+            <div class="row row-cols-3 m-auto">
+
+                <!-- Ami à ajouter -->
+                <div class="task_padding col-10 p-2" id="friend">
+                    <div class="friend_name">{{ invitation.user.firstname }} {{ invitation.user.lastname }}</div>
+                </div>
+
+                <!-- Options de la tâche -->
+                <div class="option_padding col-2 m-auto">
+                    <a class="add" href="#">
+                        <div>
+                            <a href="{{ path('tasks_new') }}" class="add_task" role="button" aria-pressed="true"><i class="fas fa-plus"></i></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
 {% endblock %}

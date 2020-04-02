@@ -62,7 +62,8 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <link rel=\"stylesheet\" href=\"/assets/css/layout.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
-        <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- edit -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/invitations.css\" id=\"invitations\"> <!-- invitations -->
 
         <!-- Icone -->
 
@@ -71,15 +72,15 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
 
         ";
-        // line 22
-        $this->displayBlock('css', $context, $blocks);
         // line 23
+        $this->displayBlock('css', $context, $blocks);
+        // line 24
         echo "    </head>
 
     ";
-        // line 25
+        // line 26
         $this->displayBlock('body', $context, $blocks);
-        // line 115
+        // line 116
         echo "</html>
 ";
         
@@ -109,7 +110,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 22
+    // line 23
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -128,7 +129,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 25
+    // line 26
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -138,24 +139,24 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 26
+        // line 27
         echo "    <body>
         ";
-        // line 27
+        // line 28
         $this->displayBlock('header', $context, $blocks);
-        // line 56
+        // line 57
         echo "
         <!-- Défini le titre de la page -->
         <div class=\"m-auto page_name\">
             <h3 class=\"text-center\">";
-        // line 59
+        // line 60
         $this->displayBlock('page_name', $context, $blocks);
         echo "</h3>
         </div>
 
         <!-- Contenu de la page -->
         <div class=\"content\">";
-        // line 63
+        // line 64
         $this->displayBlock('content', $context, $blocks);
         echo " </div>
 
@@ -217,7 +218,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 27
+    // line 28
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -227,10 +228,13 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 28
+        // line 29
         echo "            <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
-                <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
+                <a class=\"navbar-brand logo\" href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tasks_index");
+        echo "\">TodoList</a>
 
                 <!-- Toggler/collapsibe Button -->
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#menu\">
@@ -241,20 +245,20 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"#\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+                        </li>
+                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 41
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("invitations_index");
-        echo "\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+        echo "\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
+                            <a class=\"nav-link\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 50
+        // line 51
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>
                         </li>
@@ -270,7 +274,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 59
+    // line 60
     public function block_page_name($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -288,7 +292,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     }
 
-    // line 63
+    // line 64
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -313,7 +317,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
 
     public function getDebugInfo()
     {
-        return array (  292 => 63,  274 => 59,  258 => 50,  246 => 41,  231 => 28,  221 => 27,  159 => 63,  152 => 59,  147 => 56,  145 => 27,  142 => 26,  132 => 25,  113 => 22,  94 => 5,  83 => 115,  81 => 25,  77 => 23,  75 => 22,  55 => 5,  49 => 1,);
+        return array (  296 => 64,  278 => 60,  262 => 51,  253 => 45,  236 => 31,  232 => 29,  222 => 28,  160 => 64,  153 => 60,  148 => 57,  146 => 28,  143 => 27,  133 => 26,  114 => 23,  95 => 5,  84 => 116,  82 => 26,  78 => 24,  76 => 23,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -331,7 +335,8 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         <link rel=\"stylesheet\" href=\"/assets/css/layout.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/white/dashboard.css\" id=\"dashboard\"> <!-- Dashboard -->
         <link rel=\"stylesheet\" href=\"/assets/css/white/add.css\" id=\"add\"> <!-- Add -->
-        <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- Add -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/edit.css\" id=\"edit\"> <!-- edit -->
+        <link rel=\"stylesheet\" href=\"/assets/css/white/invitations.css\" id=\"invitations\"> <!-- invitations -->
 
         <!-- Icone -->
 
@@ -347,7 +352,7 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
         {% block header %}
             <nav class=\"navbar navbar-expand-md sticky-top nav\">
                 <!-- Titre de notre site -->
-                <a class=\"navbar-brand logo\" href=\"#\">TodoList</a>
+                <a class=\"navbar-brand logo\" href=\"{{ path(\"tasks_index\") }}\">TodoList</a>
 
                 <!-- Toggler/collapsibe Button -->
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#menu\">
@@ -358,13 +363,13 @@ class __TwigTemplate_83b0f71dad45437997b5771c1e052a8565cc1c9cf47f73f5805a560e694
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path(\"invitations_index\") }}\"><i class=\"far fa-address-book\"></i>Mes amis</a>
+                            <a class=\"nav-link\" href=\"#\"><i class=\"far fa-address-book\"></i>Mes amis</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
+                            <a class=\"nav-link\" href=\"{{ path(\"invitations_index\") }}\"><i class=\"fas fa-user-plus\"></i>Ajouter des amis</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
+                            <a class=\"nav-link\" aria-disabled=\"true\" role=\"button\"> <i class=\"fas fa-adjust\" ></i><span id=\"theme\">Thème</span></a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"{{ path('app_logout') }}\"><i class=\"fas fa-sign-out-alt\"></i>Deconnexion</a>

@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerO5PtvZi;
+namespace ContainerRefUXV8;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1995,6 +1995,20 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private 'App\Form\FriendsSearchType' shared autowired service.
+     *
+     * @return \App\Form\FriendsSearchType
+     */
+    protected function getFriendsSearchTypeService()
+    {
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\FormTypeInterface.php';
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\AbstractType.php';
+        include_once \dirname(__DIR__, 4).'\\src\\Form\\FriendsSearchType.php';
+
+        return $this->privates['App\\Form\\FriendsSearchType'] = new \App\Form\FriendsSearchType();
+    }
+
+    /**
      * Gets the private 'App\Form\InvitationsType' shared autowired service.
      *
      * @return \App\Form\InvitationsType
@@ -2004,8 +2018,15 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\FormTypeInterface.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\AbstractType.php';
         include_once \dirname(__DIR__, 4).'\\src\\Form\\InvitationsType.php';
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\security-core\\Security.php';
 
-        return $this->privates['App\\Form\\InvitationsType'] = new \App\Form\InvitationsType();
+        return $this->privates['App\\Form\\InvitationsType'] = new \App\Form\InvitationsType(new \Symfony\Component\Security\Core\Security(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'security.authorization_checker' => ['services', 'security.authorization_checker', 'getSecurity_AuthorizationCheckerService', false],
+            'security.token_storage' => ['services', 'security.token_storage', 'getSecurity_TokenStorageService', false],
+        ], [
+            'security.authorization_checker' => '?',
+            'security.token_storage' => '?',
+        ])));
     }
 
     /**
@@ -2492,7 +2513,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\console\\Command\\Command.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\Command\\DebugCommand.php';
 
-        $this->privates['console.command.form_debug'] = $instance = new \Symfony\Component\Form\Command\DebugCommand(($this->privates['form.registry'] ?? $this->getForm_RegistryService()), [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type', 1 => 'App\\Form', 2 => 'Symfony\\Bridge\\Doctrine\\Form\\Type'], [0 => 'App\\Form\\InvitationsType', 1 => 'App\\Form\\RegistrationFormType', 2 => 'App\\Form\\TasksType', 3 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FormType', 4 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType', 5 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FileType', 6 => 'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType'], [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\TransformationFailureExtension', 1 => 'Symfony\\Component\\Form\\Extension\\HttpFoundation\\Type\\FormTypeHttpFoundationExtension', 2 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\FormTypeValidatorExtension', 3 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\RepeatedTypeValidatorExtension', 4 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\SubmitTypeValidatorExtension', 5 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\UploadValidatorExtension', 6 => 'Symfony\\Component\\Form\\Extension\\Csrf\\Type\\FormTypeCsrfExtension', 7 => 'Symfony\\Component\\Form\\Extension\\DataCollector\\Type\\DataCollectorTypeExtension'], [0 => 'Symfony\\Component\\Form\\Extension\\Validator\\ValidatorTypeGuesser', 1 => 'Symfony\\Bridge\\Doctrine\\Form\\DoctrineOrmTypeGuesser'], ($this->privates['debug.file_link_formatter'] ?? $this->getDebug_FileLinkFormatterService()));
+        $this->privates['console.command.form_debug'] = $instance = new \Symfony\Component\Form\Command\DebugCommand(($this->privates['form.registry'] ?? $this->getForm_RegistryService()), [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type', 1 => 'App\\Form', 2 => 'Symfony\\Bridge\\Doctrine\\Form\\Type'], [0 => 'App\\Form\\FriendsSearchType', 1 => 'App\\Form\\InvitationsType', 2 => 'App\\Form\\RegistrationFormType', 3 => 'App\\Form\\TasksType', 4 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FormType', 5 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType', 6 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FileType', 7 => 'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType'], [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\TransformationFailureExtension', 1 => 'Symfony\\Component\\Form\\Extension\\HttpFoundation\\Type\\FormTypeHttpFoundationExtension', 2 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\FormTypeValidatorExtension', 3 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\RepeatedTypeValidatorExtension', 4 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\SubmitTypeValidatorExtension', 5 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\UploadValidatorExtension', 6 => 'Symfony\\Component\\Form\\Extension\\Csrf\\Type\\FormTypeCsrfExtension', 7 => 'Symfony\\Component\\Form\\Extension\\DataCollector\\Type\\DataCollectorTypeExtension'], [0 => 'Symfony\\Component\\Form\\Extension\\Validator\\ValidatorTypeGuesser', 1 => 'Symfony\\Bridge\\Doctrine\\Form\\DoctrineOrmTypeGuesser'], ($this->privates['debug.file_link_formatter'] ?? $this->getDebug_FileLinkFormatterService()));
 
         $instance->setName('debug:form');
 
@@ -3691,6 +3712,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\ResolvedFormTypeFactory.php';
 
         return $this->privates['form.registry'] = new \Symfony\Component\Form\FormRegistry([0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Form\\FriendsSearchType' => ['privates', 'App\\Form\\FriendsSearchType', 'getFriendsSearchTypeService', false],
             'App\\Form\\InvitationsType' => ['privates', 'App\\Form\\InvitationsType', 'getInvitationsTypeService', false],
             'App\\Form\\RegistrationFormType' => ['privates', 'App\\Form\\RegistrationFormType', 'getRegistrationFormTypeService', false],
             'App\\Form\\TasksType' => ['privates', 'App\\Form\\TasksType', 'getTasksTypeService', false],
@@ -3699,6 +3721,7 @@ class srcApp_KernelDevDebugContainer extends Container
             'Symfony\\Component\\Form\\Extension\\Core\\Type\\FileType' => ['services', 'form.type.file', 'getForm_Type_FileService', false],
             'Symfony\\Component\\Form\\Extension\\Core\\Type\\FormType' => ['privates', 'form.type.form', 'getForm_Type_FormService', false],
         ], [
+            'App\\Form\\FriendsSearchType' => '?',
             'App\\Form\\InvitationsType' => '?',
             'App\\Form\\RegistrationFormType' => '?',
             'App\\Form\\TasksType' => '?',
