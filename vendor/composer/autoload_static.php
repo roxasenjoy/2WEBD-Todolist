@@ -114,6 +114,7 @@ class ComposerStaticInitdf643e4d69770cc49d0ca0e4e4bfbf85
         ),
         'L' => 
         array (
+            'Liip\\TestFixturesBundle\\' => 24,
             'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\EventManager\\' => 21,
             'Laminas\\Code\\' => 13,
@@ -459,6 +460,10 @@ class ComposerStaticInitdf643e4d69770cc49d0ca0e4e4bfbf85
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Liip\\TestFixturesBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/liip/test-fixtures-bundle/src',
         ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (

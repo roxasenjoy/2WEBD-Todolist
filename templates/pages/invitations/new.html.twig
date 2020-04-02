@@ -3,22 +3,19 @@
 {% block page_name %} Ajouter des amis{% endblock %}
 
 {% block content %}
-
-
-        <div class="task container">
-            <div class="row row-cols-3 m-auto">
-
-                <!-- Ami à ajouter -->
-                <div class="task_padding col-8 p-2" id="friend">
-                    {{ form_start(form) }}
-                        {{ form_widget(form.user) }}
-                       {{ form_end(form) }}
-                </div>
-
+    <div class="task container">
+        <div class="row row-cols-3 m-auto">
+            <!-- Ami à ajouter -->
+            <div class="task_padding col-8 p-2" id="friend">
+                {{ form_start(form) }}
                 <!-- Options de la tâche -->
+                {{ form_label(form.user) }}
+                {{ form_widget(form.user) }}
                 <div class="option_padding col-4 m-auto">
                     <button class="btn">{{ button_label|default('Ajouter') }}</button>
                 </div>
+                {{ form_end(form, {'render_rest': false}) }}
             </div>
         </div>
+    </div>
 {% endblock %}

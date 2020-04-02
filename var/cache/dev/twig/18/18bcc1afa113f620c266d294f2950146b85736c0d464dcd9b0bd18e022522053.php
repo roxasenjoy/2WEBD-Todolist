@@ -153,20 +153,22 @@ class __TwigTemplate_b4e2622e6a0c95469203535be54fc3fafdebdb42e79f4dd15c55b5fa962
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "status", [], "any", false, false, false, 21), 'widget');
         echo "</div>
 
+
+
             <div class=\"text-center fixed-bottom mb-5\">
                 <a href=\"";
-        // line 24
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tasks_index");
         echo "\" class=\"previous\">Retour</a>
                 <button class=\"next button\">";
-        // line 25
+        // line 27
         echo "Valider";
         echo "</button>
             </div>
 
             ";
-        // line 28
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
+        // line 30
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 30, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -193,7 +195,7 @@ class __TwigTemplate_b4e2622e6a0c95469203535be54fc3fafdebdb42e79f4dd15c55b5fa962
 
     public function getDebugInfo()
     {
-        return array (  169 => 28,  163 => 25,  159 => 24,  153 => 21,  149 => 20,  143 => 17,  139 => 16,  133 => 13,  128 => 10,  118 => 9,  99 => 7,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  171 => 30,  165 => 27,  161 => 26,  153 => 21,  149 => 20,  143 => 17,  139 => 16,  133 => 13,  128 => 10,  118 => 9,  99 => 7,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -219,6 +221,8 @@ class __TwigTemplate_b4e2622e6a0c95469203535be54fc3fafdebdb42e79f4dd15c55b5fa962
             <!-- Urgence de la tâche -->
             <div>{{ form_label(form.status) }}</div>
             <div>{{ form_widget(form.status) }}</div>
+
+
 
             <div class=\"text-center fixed-bottom mb-5\">
                 <a href=\"{{ path('tasks_index') }}\" class=\"previous\">Retour</a>

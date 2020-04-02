@@ -23,7 +23,7 @@ class InvitationsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-          //  ->add('accepted_invitation')
+            ->add('accepted_invitation')
             ->add('user', EntityType::class, [
                 'class' => User::class,
                 'query_builder' => function (EntityRepository $er) {
@@ -31,8 +31,7 @@ class InvitationsType extends AbstractType
                         ->where('u.id NOT LIKE :user') // Id différent de id user présent
                         ->setParameter('user', $this->security->getUser());
                 }
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
